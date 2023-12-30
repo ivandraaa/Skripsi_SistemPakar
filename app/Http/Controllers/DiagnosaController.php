@@ -84,18 +84,17 @@ class DiagnosaController extends Controller
                 "cf" => [],
                 "kode_penyakit" => []
             ];
-            $res = 0;
             $ruleSetiapPenyakit = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_penyakit", $penyakit[$i]->kode_penyakit)->get();
-            // dd($ruleSetiapPenyakit);
             if (count($ruleSetiapPenyakit) > 0) {
                 foreach ($ruleSetiapPenyakit as $ruleKey) {
-                    $cf = $ruleKey->mb - $ruleKey->md;
+                    $bobot = $bobotPilihan[array_search($ruleKey->kode_gejala, array_column($bobotPilihan, 0))][1];
+                    $mb = $ruleKey->mb * $bobot;
+                    $md = $ruleKey->md * $bobot;
+                    $cf = $mb - $md;
                     array_push($cfArr["cf"], $cf);
                     array_push($cfArr["kode_penyakit"], $ruleKey->kode_penyakit);
                 }
                 $res = $this->getGabunganCf($cfArr);
-                // dd($res);
-                // print "<br> res : $res <br>";
                 array_push($arrGejala, $res);
             } else {
                 continue;
