@@ -74,7 +74,7 @@
           <li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/form-faq">Diagnosa</a></li>
-              <li><a href="/gejala">Gejala</a></li>
+              <li><a href="/identifikasi">Identifikasi</a></li>
               <li><a href="/pasal">Pasal</a></li>
             </ul>
           </li>
@@ -124,7 +124,7 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
                     <h4>Solving Problem</h4>
-                    <p>Memberikan solusi terkait kesehatan tanaman brokoli berdasarkan gejala-gejala yang ada</p>
+                    <p>Memberikan solusi terkait kesehatan tanaman brokoli berdasarkan identifikasi-identifikasi yang ada</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">

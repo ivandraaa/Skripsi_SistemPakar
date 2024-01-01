@@ -36,15 +36,15 @@
                     </div>
 
                     <div class="card-body">
-                      <h5 class="card-title">Daftar <span>| Gejala</span></h5>
+                      <h5 class="card-title">Daftar <span>| Identifikasi</span></h5>
 
                       <div class="d-flex align-items-center">
                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                           <i class="bi bi-activity"></i>
                         </div>
                         <div class="ps-3">
-                          <h6>{{$gejala->count()}}</h6>
-                          <span class="text-success small pt-1 fw-bold">{{$gejala->count()}}</span> <span class="text-muted small pt-2 ps-1">gejala</span>
+                          <h6>{{$identifikasi->count()}}</h6>
+                          <span class="text-success small pt-1 fw-bold">{{$identifikasi->count()}}</span> <span class="text-muted small pt-2 ps-1">identifikasi</span>
 
                         </div>
                       </div>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="ps-3">
                           <h6>{{$tingkat_pasal->count()}}</h6>
-                          <span class="text-success small pt-1 fw-bold">{{$gejala->count()}}</span> <span class="text-muted small pt-2 ps-1">gejala</span>
+                          <span class="text-success small pt-1 fw-bold">{{$identifikasi->count()}}</span> <span class="text-muted small pt-2 ps-1">identifikasi</span>
 
                         </div>
                       </div>
@@ -133,22 +133,22 @@
                     </div>
 
                     <div class="card-body">
-                      <h5 class="card-title">Daftar <span>| Gejala</span></h5>
+                      <h5 class="card-title">Daftar <span>| Identifikasi</span></h5>
 
                       <table class="table table-borderless datatable">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Kode Gejala</th>
-                            <th scope="col">Gejala</th>
+                            <th scope="col">Kode Identifikasi</th>
+                            <th scope="col">Identifikasi</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($gejala as $item)
+                            @foreach ($identifikasi as $item)
                           <tr>
                             <th scope="row"><a href="#">#{{ $loop->iteration }}</a></th>
-                            <td><a href="#" class="text-primary">{{ $item->kode_gejala }}</a></td>
-                            <td>{{ $item->gejala }}</td>
+                            <td><a href="#" class="text-primary">{{ $item->kode_identifikasi }}</a></td>
+                            <td>{{ $item->identifikasi }}</td>
                           </tr>
                           @endforeach
                         </tbody>

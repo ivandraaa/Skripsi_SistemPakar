@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\DiagnosaController;
-use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\IdentifikasiController;
 use App\Http\Controllers\TingkatPasalController;
 use App\Models\Diagnosa;
 use App\Models\TingkatPasal;
 use App\Models\KondisiUser;
-use App\Models\Gejala;
+use App\Models\Identifikasi;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +32,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         $data = [
-            'gejala' => Gejala::all(),
+            'identifikasi' => Identifikasi::all(),
             'kondisi_user' => KondisiUser::all(),
             'user' => User::all(),
             'tingkat_pasal' => TingkatPasal::all()
@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
         return redirect('/dashboard');
     });
 
-    Route::resource('/gejala', GejalaController::class);
+    Route::resource('/identifikasi', IdentifikasiController::class);
     Route::resource('/pasal', TingkatPasalController::class);
     Route::resource('/spk', DiagnosaController::class)->only('index');
 });
@@ -67,7 +67,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/form', function () {
     $data = [
-        'gejala' => Gejala::all(),
+        'identifikasi' => Identifikasi::all(),
         'kondisi_user' => KondisiUser::all()
     ];
     return view('form', $data);
@@ -75,7 +75,7 @@ Route::get('/form', function () {
 
 Route::get('/form-faq', function () {
     $data = [
-        'gejala' => Gejala::all(),
+        'identifikasi' => Identifikasi::all(),
         'kondisi_user' => KondisiUser::all()
     ];
 

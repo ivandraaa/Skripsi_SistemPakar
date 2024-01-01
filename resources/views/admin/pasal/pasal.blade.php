@@ -1,5 +1,5 @@
 @extends('admin.admin_main')
-@section('title', 'Gejala')
+@section('title', 'Identifikasi')
 
 {{-- isi --}}
 @section('admin_content')
@@ -24,7 +24,7 @@
                     <i class="bi bi-plus-circle-fill"> Tambah Pasal</i>
                 </button>
             </div>
-            <table id="tabel-gejala" class="table table-bordered table-hover my-2">
+            <table id="tabel-identifikasi" class="table table-bordered table-hover my-2">
                 <thead>
                   <tr>
                     <th scope="col">#</th>

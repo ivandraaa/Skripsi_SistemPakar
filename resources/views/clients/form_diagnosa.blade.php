@@ -18,19 +18,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($gejala as $item)
+                        @foreach ($identifikasi as $item)
     <tr>
         <th scope="row">{{ $loop->iteration }}</th>
         <td>
             <div class="pertanyaan">
-                <p>Apakah anda merasa {{ $item->gejala }} ?</p>
+                <p>Apakah anda merasa {{ $item->identifikasi }} ?</p>
             </div>
         </td>
         <td>
             <div class="pilihan">
                 @foreach ($kondisi_user as $kondisi)
                     <div class="form-check-inline">
-                        <input class="form-check-input" type="radio" name="kondisi[{{ $item->kode_gejala }}]" id="kondisi_{{ $kondisi->nilai }}" value="{{ $kondisi->nilai }}">
+                        <input class="form-check-input" type="radio" name="kondisi[{{ $item->kode_identifikasi }}]" id="kondisi_{{ $kondisi->nilai }}" value="{{ $kondisi->nilai }}">
                         <label class="form-check-label" for="kondisi_{{ $kondisi->nilai }}" style="display: block; font-size: smaller;">{{ $kondisi->kondisi }}</label>
                     </div>
                 @endforeach

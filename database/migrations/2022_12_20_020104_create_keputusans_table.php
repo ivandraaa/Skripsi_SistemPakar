@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('keputusan', function (Blueprint $table) {
             $table->id();
-            $table->char('kode_gejala');
+            $table->char('kode_identifikasi');
             $table->char('kode_pasal');
             $table->float('mb');
             $table->float('md');

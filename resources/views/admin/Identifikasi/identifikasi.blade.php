@@ -1,5 +1,5 @@
 @extends('admin.admin_main')
-@section('title', 'Gejala')
+@section('title', 'Identifikasi')
 
 {{-- isi --}}
 @section('admin_content')
@@ -21,29 +21,29 @@
             @endif
             <div class="mt-2 pt-3 d-flex ms-auto">
                 <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#storeModal">
-                    <i class="bi bi-plus-circle-fill"> Tambah Gejala</i>
+                    <i class="bi bi-plus-circle-fill"> Tambah Identifikasi</i>
                 </button>
             </div>
-            <table id="tabel-gejala" class="table table-bordered table-hover my-2">
+            <table id="tabel-identifikasi" class="table table-bordered table-hover my-2">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Kode Gejala</th>
-                    <th scope="col">Gejala</th>
+                    <th scope="col">Kode Identifikasi</th>
+                    <th scope="col">Identifikasi</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($gejala as $item)
+                    @foreach ($identifikasi as $item)
                         <tr>
-                            <th scope="row">{{ $loop->iteration + $gejala->firstItem() -1 }}</th>
-                            <td>{{$item->kode_gejala}}</td>
-                            <td>{{$item->gejala}}</td>
+                            <th scope="row">{{ $loop->iteration + $identifikasi->firstItem() -1 }}</th>
+                            <td>{{$item->kode_identifikasi}}</td>
+                            <td>{{$item->identifikasi}}</td>
                             <td>
-                                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInput('{{ $item->id }}', '{{$item->kode_gejala}}', '{{$item->gejala}}'), actionUbahGejala('/gejala/{{$item->id}}')">
+                                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInput('{{ $item->id }}', '{{$item->kode_identifikasi}}', '{{$item->identifikasi}}'), actionUbahIdentifikasi('/identifikasi/{{$item->id}}')">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
-                                <form action="/gejala/{{ $item->id }}" method="post" class="d-inline">
+                                <form action="/identifikasi/{{ $item->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-outline-danger">
@@ -56,9 +56,9 @@
                 </tbody>
               </table>
               <div class="d-flex justify-content-center">
-                  {{ $gejala->links('pagination::simple-bootstrap-5') }}
+                  {{ $identifikasi->links('pagination::simple-bootstrap-5') }}
               </div>
-              @include('components.admin_modal_gejala_edit')
+              @include('components.admin_modal_identifikasi_edit')
           </div>
         </div>
     </div>

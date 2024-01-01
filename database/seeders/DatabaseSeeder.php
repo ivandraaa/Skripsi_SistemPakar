@@ -6,7 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Artikel;
 use App\Models\CertainFactor;
-use App\Models\Gejala;
+use App\Models\Identifikasi;
 use App\Models\Keputusan;
 use App\Models\KondisiUser;
 use App\Models\TingkatPasal;
@@ -32,14 +32,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $keputusan = new Keputusan();
-        $gejala = new Gejala();
+        $identifikasi = new Identifikasi();
         $pasal = new TingkatPasal();
         $kondisi = new KondisiUser();
 
         $artikel = new Artikel();
 
         Keputusan::insert($keputusan->fillTable());
-        Gejala::insert($gejala->fillTable());
+        Identifikasi::insert($identifikasi->fillTable());
         TingkatPasal::insert($pasal->fillTable());
         KondisiUser::insert($kondisi->fillTable());
         Artikel::insert($artikel->fillTabel());

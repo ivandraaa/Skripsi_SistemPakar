@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Gejala;
+use App\Models\Kode_Identifikasi;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class GejalaPolicy
+class KodeIdentifikasiPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class GejalaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Gejala  $gejala
+     * @param  \App\Models\Kode_Identifikasi  $kodeIdentifikasi
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Gejala $gejala)
+    public function view(User $user, Kode_Identifikasi $kodeIdentifikasi)
     {
         //
     }
@@ -48,10 +48,10 @@ class GejalaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Gejala  $gejala
+     * @param  \App\Models\Kode_Identifikasi  $kodeIdentifikasi
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Gejala $gejala)
+    public function update(User $user, Kode_Identifikasi $kodeIdentifikasi)
     {
         //
     }
@@ -60,10 +60,10 @@ class GejalaPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Gejala  $gejala
+     * @param  \App\Models\Kode_Identifikasi  $kodeIdentifikasi
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Gejala $gejala)
+    public function delete(User $user, Kode_Identifikasi $kodeIdentifikasi)
     {
         //
     }
@@ -72,10 +72,10 @@ class GejalaPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Gejala  $gejala
+     * @param  \App\Models\Kode_Identifikasi  $kodeIdentifikasi
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Gejala $gejala)
+    public function restore(User $user, Kode_Identifikasi $kodeIdentifikasi)
     {
         //
     }
@@ -84,10 +84,10 @@ class GejalaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Gejala  $gejala
+     * @param  \App\Models\Kode_Identifikasi  $kodeIdentifikasi
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Gejala $gejala)
+    public function forceDelete(User $user, Kode_Identifikasi $kodeIdentifikasi)
     {
         //
     }

@@ -6,9 +6,9 @@ use App\Models\Diagnosa;
 use App\Http\Requests\StoreDiagnosaRequest;
 use App\Http\Requests\UpdateDiagnosaRequest;
 use App\Models\Artikel;
-use App\Models\Gejala;
+use App\Models\Identifikasi;
 use App\Models\Keputusan;
-use App\Models\Kode_Gejala;
+use App\Models\Kode_Identifikasi;
 use App\Models\KondisiUser;
 use App\Models\TingkatPasal;
 use GuzzleHttp\Middleware;
@@ -43,7 +43,7 @@ class DiagnosaController extends Controller
     public function create()
     {
         $data = [
-            'gejala' => Gejala::all(),
+            'identifikasi' => Identifikasi::all(),
             'kondisi_user' => KondisiUser::all()
         ];
 
@@ -64,13 +64,13 @@ class DiagnosaController extends Controller
         });
 
         // dd($kondisi);
-        $kodeGejala = [];
+        $kodeIdentifikasi = [];
         $bobotPilihan = [];
         foreach ($kondisi as $key => $val) {
             if ($val != "#") {
                 echo "key : $key, val : $val";
                 echo "<br>";
-                array_push($kodeGejala, $key);
+                array_push($kodeIdentifikasi, $key);
                 array_push($bobotPilihan, array($key, $val));
             }
         }
@@ -78,16 +78,16 @@ class DiagnosaController extends Controller
         $pasal = TingkatPasal::all();
         $cf = 0;
         // pasal
-        $arrGejala = [];
+        $arrIdentifikasi = [];
         for ($i = 0; $i < count($pasal); $i++) {
             $cfArr = [
                 "cf" => [],
                 "kode_pasal" => []
             ];
-            $ruleSetiapPasal = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_pasal", $pasal[$i]->kode_pasal)->get();
+            $ruleSetiapPasal = Keputusan::whereIn("kode_identifikasi", $kodeIdentifikasi)->where("kode_pasal", $pasal[$i]->kode_pasal)->get();
             if (count($ruleSetiapPasal) > 0) {
                 foreach ($ruleSetiapPasal as $ruleKey) {
-                    $bobot = $bobotPilihan[array_search($ruleKey->kode_gejala, array_column($bobotPilihan, 0))][1];
+                    $bobot = $bobotPilihan[array_search($ruleKey->kode_identifikasi, array_column($bobotPilihan, 0))][1];
                     $mb = $ruleKey->mb * $bobot;
                     $md = $ruleKey->md * $bobot;
                     $cf = $mb - $md;
@@ -95,20 +95,20 @@ class DiagnosaController extends Controller
                     array_push($cfArr["kode_pasal"], $ruleKey->kode_pasal);
                 }
                 $res = $this->getGabunganCf($cfArr);
-                array_push($arrGejala, $res);
+                array_push($arrIdentifikasi, $res);
             } else {
                 continue;
             }
         }
-        // dd($arrGejala);
-        // echo "<br> arrGejala : ";
-        // print_r($arrGejala);
+        // dd($arrIdentifikasi);
+        // echo "<br> arrIdentifikasi : ";
+        // print_r($arrIdentifikasi);
         // echo "<br>";
 
         $diagnosa_id = uniqid();
         $ins =  Diagnosa::create([
             'diagnosa_id' => strval($diagnosa_id),
-            'data_diagnosa' => json_encode($arrGejala),
+            'data_diagnosa' => json_encode($arrIdentifikasi),
             'kondisi' => json_encode($bobotPilihan)
         ]);
         // dd($ins);
@@ -156,7 +156,7 @@ class DiagnosaController extends Controller
     public function diagnosaResult($diagnosa_id)
     {
         $diagnosa = Diagnosa::where('diagnosa_id', $diagnosa_id)->first();
-        $gejala = json_decode($diagnosa->kondisi, true);
+        $identifikasi = json_decode($diagnosa->kondisi, true);
         $data_diagnosa = json_decode($diagnosa->data_diagnosa, true);
         // dd($data_diagnosa);
         $int = 0.0;
@@ -170,33 +170,33 @@ class DiagnosaController extends Controller
             }
         }
         // dd($diagnosa_dipilih);
-        // dd($gejala);
+        // dd($identifikasi);
 
-        $kodeGejala = [];
-        foreach ($gejala as $key) {
-            array_push($kodeGejala, $key[0]);
+        $kodeIdentifikasi = [];
+        foreach ($identifikasi as $key) {
+            array_push($kodeIdentifikasi, $key[0]);
         }
-        // dd($kodeGejala);
+        // dd($kodeIdentifikasi);
         $kode_pasal = $diagnosa_dipilih["kode_pasal"]->kode_pasal;
-        $pakar = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_pasal", $kode_pasal)->get();
+        $pakar = Keputusan::whereIn("kode_identifikasi", $kodeIdentifikasi)->where("kode_pasal", $kode_pasal)->get();
         // dd($pakar);
-        $gejala_by_user = [];
+        $identifikasi_by_user = [];
         foreach ($pakar as $key) {
             $i = 0;
-            foreach ($gejala as $gKey) {
-                if ($gKey[0] == $key->kode_gejala) {
-                    array_push($gejala_by_user, $gKey);
+            foreach ($identifikasi as $gKey) {
+                if ($gKey[0] == $key->kode_identifikasi) {
+                    array_push($identifikasi_by_user, $gKey);
                 }
             }
         }
-        // dd($gejala_by_user);
+        // dd($identifikasi_by_user);
 
         $nilaiPakar = [];
         foreach ($pakar as $key) {
             array_push($nilaiPakar, ($key->mb - $key->md));
         }
         $nilaiUser = [];
-        foreach ($gejala_by_user as $key) {
+        foreach ($identifikasi_by_user as $key) {
             array_push($nilaiUser, $key[1]);
         }
         // dd($nilaiPakar);
@@ -212,10 +212,10 @@ class DiagnosaController extends Controller
         return view('clients.cl_diagnosa_result', [
             "diagnosa" => $diagnosa,
             "diagnosa_dipilih" => $diagnosa_dipilih,
-            "gejala" => $gejala,
+            "identifikasi" => $identifikasi,
             "data_diagnosa" => $data_diagnosa,
             "pakar" => $pakar,
-            "gejala_by_user" => $gejala_by_user,
+            "identifikasi_by_user" => $identifikasi_by_user,
             "cf_kombinasi" => $cfKombinasi,
             "hasil" => $hasil,
             "artikel" => $artikel

@@ -15,9 +15,9 @@ class Keputusan extends Model
     {
         return $this->hasMany(TingkatPasal::class, 'kode_pasal', 'kode_pasal');
     }
-    public function gejala()
+    public function identifikasi()
     {
-        return $this->hasMany(Gejala::class, 'kode_gejala' /* tbl gejala */, 'kode_gejala');
+        return $this->hasMany(Identifikasi::class, 'kode_identifikasi' /* tbl identifikasi */, 'kode_identifikasi');
     }
 
 // 1-4 = CLub Root
@@ -29,151 +29,151 @@ class Keputusan extends Model
         $rule = [
             [
                 'kode_pasal' => 'P001',
-                'kode_gejala' => 'G001',
+                'kode_identifikasi' => 'G001',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P001',
-                'kode_gejala' => 'G002',
+                'kode_identifikasi' => 'G002',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P001',
-                'kode_gejala' => 'G003',
+                'kode_identifikasi' => 'G003',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P001',
-                'kode_gejala' => 'G004',
+                'kode_identifikasi' => 'G004',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P001',
-                'kode_gejala' => 'G005',
+                'kode_identifikasi' => 'G005',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P002',
-                'kode_gejala' => 'G006',
+                'kode_identifikasi' => 'G006',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P002',
-                'kode_gejala' => 'G007',
+                'kode_identifikasi' => 'G007',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P002',
-                'kode_gejala' => 'G008',
+                'kode_identifikasi' => 'G008',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P002',
-                'kode_gejala' => 'G009',
+                'kode_identifikasi' => 'G009',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P002',
-                'kode_gejala' => 'G010',
+                'kode_identifikasi' => 'G010',
                 'mb' => 1,
                 'md' => 0
             ],
             [
                 'kode_pasal' => 'P003',
-                'kode_gejala' => 'G011',
+                'kode_identifikasi' => 'G011',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P003',
-                'kode_gejala' => 'G012',
+                'kode_identifikasi' => 'G012',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P003',
-                'kode_gejala' => 'G013',
+                'kode_identifikasi' => 'G013',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P003',
-                'kode_gejala' => 'G014',
+                'kode_identifikasi' => 'G014',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P003',
-                'kode_gejala' => 'G015',
+                'kode_identifikasi' => 'G015',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_gejala' => 'G016',
+                'kode_identifikasi' => 'G016',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_gejala' => 'G017',
+                'kode_identifikasi' => 'G017',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_gejala' => 'G018',
+                'kode_identifikasi' => 'G018',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_gejala' => 'G019',
+                'kode_identifikasi' => 'G019',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_gejala' => 'G020',
+                'kode_identifikasi' => 'G020',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P005',
-                'kode_gejala' => 'G021',
+                'kode_identifikasi' => 'G021',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P005',
-                'kode_gejala' => 'G022',
+                'kode_identifikasi' => 'G022',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P005',
-                'kode_gejala' => 'G023',
+                'kode_identifikasi' => 'G023',
                 'mb' => 1,
                 'md' => 0
             ],
             [
                 'kode_pasal' => 'P005',
-                'kode_gejala' => 'G024',
+                'kode_identifikasi' => 'G024',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P005',
-                'kode_gejala' => 'G025',
+                'kode_identifikasi' => 'G025',
                 'mb' => 0.6,
                 'md' => 0.4
             ],

@@ -39,7 +39,7 @@
                             </tr>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Gejala</th>
+                                <th scope="col">Identifikasi</th>
                                 <th scope="col">Nilai (MB - MD)</th>
                             </tr>
                         </thead>
@@ -48,7 +48,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        {{ $item->kode_gejala }} | {{ $item->kode_pasal }}
+                                        {{ $item->kode_identifikasi }} | {{ $item->kode_pasal }}
                                     </td>
                                     <td>{{ $item->mb - $item->md }}</td>
                                 </tr>
@@ -63,12 +63,12 @@
                                 <th scope="col">User</th>
                             </tr>
                             <tr>
-                                <th scope="col">Gejala</th>
+                                <th scope="col">Identifikasi</th>
                             <th scope="col">Nilai</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($gejala_by_user as $key)
+                            @foreach ($identifikasi_by_user as $key)
                             <tr>
                                 <td>{{ $key[0] }}</td>
                                 <td>{{ $key[1] }}</td>

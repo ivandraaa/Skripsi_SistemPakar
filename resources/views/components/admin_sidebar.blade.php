@@ -17,13 +17,13 @@
         <i class="bi bi-clipboard-check"></i>
         <span>Diagnosa</span>
       </a>
-    </li><!-- End Gejala Page Nav -->
+    </li><!-- End Identifikasi Page Nav -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('gejala.index') }}">
+      <a class="nav-link collapsed" href="{{ route('identifikasi.index') }}">
         <i class="bi bi-activity"></i>
-        <span>Gejala</span>
+        <span>Identifikasi</span>
       </a>
-    </li><!-- End Gejala Page Nav -->
+    </li><!-- End Identifikasi Page Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('pasal.index') }}">

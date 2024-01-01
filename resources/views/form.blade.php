@@ -676,7 +676,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 								<ul class="sub-menu">
 									<li id="menu-item-16362"
 										class="wide bold menu-item menu-item-type-post_type menu-item-object-page menu-item-16362">
-										<a href="#">Gejala</a></li>
+										<a href="#">Identifikasi</a></li>
 									<li id="menu-item-3054"
 										class="wide bold menu-item menu-item-type-post_type menu-item-object-page menu-item-3054">
 										<a href="#">Pasal</a></li>
@@ -785,19 +785,19 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 
 
 
-												@foreach($gejala as $item)
+												@foreach($identifikasi as $item)
 <li id="field_{{ $loop->iteration }}" class="gfield question gfield_contains_required field_sublabel_below field_description_above gfield_visibility_visible" data-js-reload="field_{{ $loop->iteration }}">
-	<label class='gfield_label'>{{ $loop->iteration }}. Apakah {{ $item->gejala }}?<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label>
+	<label class='gfield_label'>{{ $loop->iteration }}. Apakah {{ $item->identifikasi }}?<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label>
 	<div class='ginput_container ginput_container_radio'>
 		<ul class='gfield_radio' id='input_{{ $loop->iteration }}'>
 			@foreach($kondisi_user as $kondisi)
 				<li style='font-size: 14px;' class='gchoice gchoice_{{ $loop->parent->iteration }}_{{ $loop->iteration }}'>
 					<input name='input_{{ $loop->parent->iteration }}' type='radio' value='{{ $kondisi->nilai }}' id='choice_{{ $loop->parent->iteration }}_{{ $loop->iteration }}'
-					onchange="document.getElementById('kondisi_{{ $item->kode_gejala }}{{ $loop->parent->iteration }}').value = this.value" />
+					onchange="document.getElementById('kondisi_{{ $item->kode_identifikasi }}{{ $loop->parent->iteration }}').value = this.value" />
 					<label for='choice_{{ $loop->parent->iteration }}_{{ $loop->iteration }}' id='label_{{ $loop->parent->iteration }}_{{ $loop->iteration }}'>{{ $kondisi->kondisi }}</label>
 				</li>
 				@endforeach
-				<input type="hidden" name="kondisi[{{ $item->kode_gejala }}]" id="kondisi_{{ $item->kode_gejala }}{{ $loop->iteration }}" value="" />
+				<input type="hidden" name="kondisi[{{ $item->kode_identifikasi }}]" id="kondisi_{{ $item->kode_identifikasi }}{{ $loop->iteration }}" value="" />
 		</ul>
 	</div>
 </li>
