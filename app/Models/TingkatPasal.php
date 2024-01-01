@@ -17,23 +17,31 @@ class TingkatPasal extends Model
         $pasal = [
             [
                 "kode_pasal" => "P001",
-                "pasal" => "Club Rot"
+                "pasal" => "Pasal 310 Ayat 1"
             ],
             [
                 "kode_pasal" => "P002",
-                "pasal" => "Black Rot"
+                "pasal" => "Pasal 310 Ayat 2"
             ],
             [
                 "kode_pasal" => "P003",
-                "pasal" => "Downy Mildew"
+                "pasal" => "Pasal 310 Ayat 3"
             ],
             [
                 "kode_pasal" => "P004",
-                "pasal" => "Leaf Spot"
+                "pasal" => "Pasal 311 Ayat 1"
             ],
             [
                 "kode_pasal" => "P005",
-                "pasal" => "White Rust"
+                "pasal" => "Pasal 311 Ayat 2"
+            ],
+            [
+                "kode_pasal" => "P006",
+                "pasal" => "Pasal 311 Ayat 3"
+            ],
+            [
+                "kode_pasal" => "P007",
+                "pasal" => "Pasal 311 Ayat 4"
             ],
         ];
         return $pasal;

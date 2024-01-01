@@ -787,7 +787,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 
 												@foreach($identifikasi as $item)
 <li id="field_{{ $loop->iteration }}" class="gfield question gfield_contains_required field_sublabel_below field_description_above gfield_visibility_visible" data-js-reload="field_{{ $loop->iteration }}">
-	<label class='gfield_label'>{{ $loop->iteration }}. Apakah {{ $item->identifikasi }}?<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label>
+	<label class='gfield_label'>{{ $loop->iteration }}. Apakah {{ $item->identifikasi }}<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label>
 	<div class='ginput_container ginput_container_radio'>
 		<ul class='gfield_radio' id='input_{{ $loop->iteration }}'>
 			@foreach($kondisi_user as $kondisi)

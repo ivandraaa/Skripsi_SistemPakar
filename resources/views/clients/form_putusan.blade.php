@@ -23,7 +23,7 @@
         <th scope="row">{{ $loop->iteration }}</th>
         <td>
             <div class="pertanyaan">
-                <p>Apakah anda merasa {{ $item->identifikasi }} ?</p>
+                <p>Apakah {{ $item->identifikasi }} ?</p>
             </div>
         </td>
         <td>

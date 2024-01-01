@@ -75,7 +75,7 @@
                         </div>
                         <div class="ps-3">
                           <h6>{{$tingkat_pasal->count()}}</h6>
-                          <span class="text-success small pt-1 fw-bold">{{$identifikasi->count()}}</span> <span class="text-muted small pt-2 ps-1">identifikasi</span>
+                          <span class="text-success small pt-1 fw-bold">{{$tingkat_pasal->count()}}</span> <span class="text-muted small pt-2 ps-1">Pasal</span>
 
                         </div>
                       </div>
