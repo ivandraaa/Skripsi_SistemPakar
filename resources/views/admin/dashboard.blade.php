@@ -67,14 +67,14 @@
                     </div>
 
                     <div class="card-body">
-                      <h5 class="card-title">Daftar <span>| Penyakit</span></h5>
+                      <h5 class="card-title">Daftar <span>| Pasal</span></h5>
 
                       <div class="d-flex align-items-center">
                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                           <i class="bi bi-x"></i>
                         </div>
                         <div class="ps-3">
-                          <h6>{{$tingkat_penyakit->count()}}</h6>
+                          <h6>{{$tingkat_pasal->count()}}</h6>
                           <span class="text-success small pt-1 fw-bold">{{$gejala->count()}}</span> <span class="text-muted small pt-2 ps-1">gejala</span>
 
                         </div>
@@ -177,22 +177,22 @@
                     </div>
 
                     <div class="card-body pb-0">
-                      <h5 class="card-title">Gangguan <span>| Penyakit</span></h5>
+                      <h5 class="card-title">Gangguan <span>| Pasal</span></h5>
 
                       <table class="table table-borderless">
                         <thead>
                           <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Kode Penyakit</th>
-                            <th scope="col">Tingkat Penyakit</th>
+                            <th scope="col">Kode Pasal</th>
+                            <th scope="col">Tingkat Pasal</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tingkat_penyakit as $item)
+                            @foreach ($tingkat_pasal as $item)
                           <tr>
                             <th scope="row"><a href="#">#{{ $loop->iteration }}</a></th>
-                            <td><a href="#" class="text-primary">{{ $item->kode_penyakit }}</a></td>
-                            <td>{{ $item->penyakit }}</td>
+                            <td><a href="#" class="text-primary">{{ $item->kode_pasal }}</a></td>
+                            <td>{{ $item->pasal }}</td>
                           </tr>
                           @endforeach
 

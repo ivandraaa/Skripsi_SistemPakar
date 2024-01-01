@@ -12,7 +12,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Diagnosa ID</th>
-                    <th scope="col">Penyakit</th>
+                    <th scope="col">Pasal</th>
                     <th scope="col">Persentase</th>
                   </tr>
                 </thead>
@@ -20,7 +20,7 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>{{ $diagnosa->diagnosa_id }}</td>
-                    <td> {{ $diagnosa_dipilih["kode_penyakit"]->kode_penyakit }} | {{ $diagnosa_dipilih["kode_penyakit"]->penyakit }}</td>
+                    <td> {{ $diagnosa_dipilih["kode_pasal"]->kode_pasal }} | {{ $diagnosa_dipilih["kode_pasal"]->pasal }}</td>
                     <td>{{ round(($hasil["value"] * 100), 2) }} %</td>
                   </tr>
                 </tbody>
@@ -48,7 +48,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        {{ $item->kode_gejala }} | {{ $item->kode_penyakit }}
+                                        {{ $item->kode_gejala }} | {{ $item->kode_pasal }}
                                     </td>
                                     <td>{{ $item->mb - $item->md }}</td>
                                 </tr>
@@ -109,9 +109,9 @@
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">
-                        {{ $diagnosa_dipilih["kode_penyakit"]->kode_penyakit }} | {{ $diagnosa_dipilih["kode_penyakit"]->penyakit }}
+                        {{ $diagnosa_dipilih["kode_pasal"]->kode_pasal }} | {{ $diagnosa_dipilih["kode_pasal"]->pasal }}
                         </h5>
-                      <p class="card-text">Jadi dapat disimpulkan bahwa tumbuhan brokoli Anda kemungkinan memiliki penyakit tersebut dengan tingkat kepastian yaitu <span class="fw-semibold fs-4">{{ round(($hasil["value"] * 100), 2) }}</span> %</p>
+                      <p class="card-text">Jadi dapat disimpulkan bahwa tumbuhan brokoli Anda kemungkinan memiliki pasal tersebut dengan tingkat kepastian yaitu <span class="fw-semibold fs-4">{{ round(($hasil["value"] * 100), 2) }}</span> %</p>
                       {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                     </div>
                   </div>

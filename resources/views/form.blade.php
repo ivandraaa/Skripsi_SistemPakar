@@ -15,10 +15,10 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" href="https://screening.mhanational.org/favicon.ico">
-	<link rel="icon" href="penyakit-assets/favicon.png">
-	<link rel="apple-touch-icon" href="penyakit-assets/apple-touch-icon.png">
+	<link rel="icon" href="pasal-assets/favicon.png">
+	<link rel="apple-touch-icon" href="pasal-assets/apple-touch-icon.png">
 	<meta name="msapplication-TileColor" content="#FFFFFF">
-	<meta name="msapplication-TileImage" content="penyakit-assets/favicon-144x144.png">
+	<meta name="msapplication-TileImage" content="pasal-assets/favicon-144x144.png">
 	<meta name="theme-color" content="#365888">
 	<script>window.dataLayer = window.dataLayer || [];
 		window.dataLayer.push({
@@ -30,24 +30,24 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 		window.dataLayer.push({
 			'event': 'screen_test'
 		});</script>
-	<script src="penyakit-assets/google/www.googleoptimize.com/optimize3af5.js?id=OPT-PNLZZ5R"></script>
+	<script src="pasal-assets/google/www.googleoptimize.com/optimize3af5.js?id=OPT-PNLZZ5R"></script>
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
 				'gtm.start':
 					new Date().getTime(), event: 'gtm.js'
 			}); var f = d.getElementsByTagName(s)[0],
 				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'penyakit-assets/google/www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+					'pasal-assets/google/www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-N3TWZFC');</script>
 	<link rel="preconnect" href="https://fonts.gstatic.com/">
 	<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
 	<script>(function (html) { html.className = html.className.replace(/\bno-js\b/, 'js') })(document.documentElement);</script>
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-	<link media="all" href="penyakit-assets/wp-content/cache/autoptimize/css/autoptimize_7a1ecf2654b585c47ef39ad343596e82.css"
+	<link media="all" href="pasal-assets/wp-content/cache/autoptimize/css/autoptimize_7a1ecf2654b585c47ef39ad343596e82.css"
 		rel="stylesheet" />
-	<link media="print" href="penyakit-assets/wp-content/cache/autoptimize/css/autoptimize_5653ccbbff2bf3fde17022871919df8b.css"
+	<link media="print" href="pasal-assets/wp-content/cache/autoptimize/css/autoptimize_5653ccbbff2bf3fde17022871919df8b.css"
 		rel="stylesheet" />
-	<title>Diagnosis Penyakit Tumbuhan Brokoli</title>
+	<title>Diagnosis Pasal Tumbuhan Brokoli</title>
 	<meta name="description"
 		content="Take our depression test if you are feeling overwhelming sadness—it&#039;s free, quick, confidential, and scientifically validated." />
 	<link rel="canonical" href="index.html" />
@@ -408,12 +408,12 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 			line-height: 1.6;
 		}
 	</style>
-	<link rel='stylesheet' id='dashicons-css' href='penyakit-assets/wp-includes/css/dashicons.min6a4d.css?ver=6.1.1'
+	<link rel='stylesheet' id='dashicons-css' href='pasal-assets/wp-includes/css/dashicons.min6a4d.css?ver=6.1.1'
 		media='all' />
-	<script src='penyakit-assets/wp-includes/js/jquery/jquery.mina7a0.js?ver=3.6.1' id='jquery-core-js'></script>
-	<script src='penyakit-assets/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
+	<script src='pasal-assets/wp-includes/js/jquery/jquery.mina7a0.js?ver=3.6.1' id='jquery-core-js'></script>
+	<script src='pasal-assets/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
 	<!--[if lt IE 9]> <script src='https://screening.mhanational.org/wp-content/themes/mha_s2s/assets/js/html5.js?ver=3.7.3' id='html5-js'></script> <![endif]-->
-	<script defer='defer' src='penyakit-assets/wp-content/plugins/gravityforms/js/jquery.json.min91ac.js?ver=2.6.8'
+	<script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/jquery.json.min91ac.js?ver=2.6.8'
 		id='gform_json-js'></script>
 	<script
 		id='gform_gravityforms-js-extra'>var gf_global = { "gf_currency_config": { "name": "U.S. Dollar", "symbol_left": "$", "symbol_right": "", "symbol_padding": "", "thousand_separator": ",", "decimal_separator": ".", "decimals": 2, "code": "USD" }, "base_url": "https:\/\/screening.mhanational.org\/wp-content\/plugins\/gravityforms", "number_formats": [], "spinnerUrl": "https:\/\/screening.mhanational.org\/wp-content\/plugins\/gravityforms\/images\/spinner.svg", "strings": { "newRowAdded": "New row added.", "rowRemoved": "Row removed", "formSaved": "The form has been saved.  The content contains the link to return and complete the form." } };
@@ -422,10 +422,10 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 			var gform_gravityforms = { "strings": { "invalid_file_extension": "This type of file is not allowed. Must be one of the following:", "delete_file": "Delete this file", "in_progress": "in progress", "file_exceeds_limit": "File exceeds size limit", "illegal_extension": "This type of file is not allowed.", "max_reached": "Maximum number of files reached", "unknown_error": "There was a problem while saving the file on the server", "currently_uploading": "Please wait for the uploading to complete", "cancel": "Cancel", "cancel_upload": "Cancel this upload", "cancelled": "Cancelled" }, "vars": { "images_url": "https:\/\/screening.mhanational.org\/wp-content\/plugins\/gravityforms\/images" } };</script>
 	<script
 		id='gform_gravityforms-js-before'>var gform; gform || (document.addEventListener("gform_main_scripts_loaded", function () { gform.scriptsLoaded = !0 }), window.addEventListener("DOMContentLoaded", function () { gform.domLoaded = !0 }), gform = { domLoaded: !1, scriptsLoaded: !1, initializeOnLoaded: function (o) { gform.domLoaded && gform.scriptsLoaded ? o() : !gform.domLoaded && gform.scriptsLoaded ? window.addEventListener("DOMContentLoaded", o) : document.addEventListener("gform_main_scripts_loaded", o) }, hooks: { action: {}, filter: {} }, addAction: function (o, n, r, t) { gform.addHook("action", o, n, r, t) }, addFilter: function (o, n, r, t) { gform.addHook("filter", o, n, r, t) }, doAction: function (o) { gform.doHook("action", o, arguments) }, applyFilters: function (o) { return gform.doHook("filter", o, arguments) }, removeAction: function (o, n) { gform.removeHook("action", o, n) }, removeFilter: function (o, n, r) { gform.removeHook("filter", o, n, r) }, addHook: function (o, n, r, t, i) { null == gform.hooks[o][n] && (gform.hooks[o][n] = []); var e = gform.hooks[o][n]; null == i && (i = n + "_" + e.length), gform.hooks[o][n].push({ tag: i, callable: r, priority: t = null == t ? 10 : t }) }, doHook: function (n, o, r) { var t; if (r = Array.prototype.slice.call(r, 1), null != gform.hooks[n][o] && ((o = gform.hooks[n][o]).sort(function (o, n) { return o.priority - n.priority }), o.forEach(function (o) { "function" != typeof (t = o.callable) && (t = window[t]), "action" == n ? t.apply(null, r) : r[0] = t.apply(null, r) })), "filter" == n) return r[0] }, removeHook: function (o, n, t, i) { var r; null != gform.hooks[o][n] && (r = (r = gform.hooks[o][n]).filter(function (o, n, r) { return !!(null != i && i != o.tag || null != t && t != o.priority) }), gform.hooks[o][n] = r) } });</script>
-	<script defer='defer' src='penyakit-assets/wp-content/plugins/gravityforms/js/gravityforms.min91ac.js?ver=2.6.8'
+	<script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/gravityforms.min91ac.js?ver=2.6.8'
 		id='gform_gravityforms-js'></script>
 	<script id='gform_conditional_logic-js-extra'>var gf_legacy = { "is_legacy": "1" };</script>
-	<script defer='defer' src='penyakit-assets/wp-content/plugins/gravityforms/js/conditional_logic.min91ac.js?ver=2.6.8'
+	<script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/conditional_logic.min91ac.js?ver=2.6.8'
 		id='gform_conditional_logic-js'></script>
 	<link rel="https://api.w.org/" href="https://screening.mhanational.org/wp-json/" />
 	<link rel="alternate" type="application/json" href="https://screening.mhanational.org/wp-json/wp/v2/screen/22" />
@@ -619,7 +619,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 	<div id="page" class="site"> <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 		<header id="header" class="clearfix">
 			<div class="wrap normal"> <a id="logo" href="/"><img
-						src="penyakit-assets/wp-content/themes/mha_s2s/assets/images/mha-logo.png" alt="MHA Screening" /></a>
+						src="pasal-assets/wp-content/themes/mha_s2s/assets/images/mha-logo.png" alt="MHA Screening" /></a>
 				<div id="utility-menu" class="utility-menu relative">
 					<div id="search-header"> <button id="search-toggle" aria-expanded="false"
 							aria-controls="search-form" data-href="/search/"> <strong
@@ -672,14 +672,14 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 						<ul id="main-menu" class="sf-menu">
 							<li id="menu-item-406"
 								class="heading left-col menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-406">
-								<a href="#">Diagnosis Penyakit Tumbuhan Brokoli</a>
+								<a href="#">Diagnosis Pasal Tumbuhan Brokoli</a>
 								<ul class="sub-menu">
 									<li id="menu-item-16362"
 										class="wide bold menu-item menu-item-type-post_type menu-item-object-page menu-item-16362">
 										<a href="#">Gejala</a></li>
 									<li id="menu-item-3054"
 										class="wide bold menu-item menu-item-type-post_type menu-item-object-page menu-item-3054">
-										<a href="#">Penyakit</a></li>
+										<a href="#">Pasal</a></li>
 
 								</ul>
 							</li>
@@ -702,7 +702,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 				<div class="wrap normal">
 					<!-- <div class="bubble round-tl mobile-wide mint"><div class="inner"><h1>Take a Mental Health Test</h1><div class="text"><p>Online screening is one of the quickest and easiest ways to determine whether you are experiencing symptoms of a mental health condition.</p><p><strong>Mental health conditions, such as depression or anxiety, are real, common and treatable. And recovery is possible.</strong></p></div></div></div> -->
 					<div class="page-heading plain">
-						<h1 class="entry-title">Diagnosis Penyakit Tumbuhan Brokoli</h1>
+						<h1 class="entry-title">Diagnosis Pasal Tumbuhan Brokoli</h1>
 					</div>
 				</div>
 				<div class="wrap medium">
@@ -710,7 +710,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 						<div class='gf_browser_safari gform_wrapper gform_legacy_markup_wrapper' id='gform_wrapper_1'
 							style='display:none'>
 							<div class='gform_heading'>
-								<h3 class="gform_title">Tes Penyakit Tumbuhan Brokoli</h3> <span class='gform_description'></span>
+								<h3 class="gform_title">Tes Pasal Tumbuhan Brokoli</h3> <span class='gform_description'></span>
 							</div>
 							<form method='post' enctype='multipart/form-data' id='gform_1' action="{{ route('spk.store') }}" novalidate>
 								@csrf
@@ -2029,56 +2029,56 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 	</div>
 	<script
 		id='process_mhaActivity-js-extra'>var do_mhaActivity = { "ajaxurl": "https:\/\/screening.mhanational.org\/wp-admin\/admin-ajax.php" };</script>
-	<script src='penyakit-assets/wp-content/plugins/mha_activity/mha_activitye084.js?ver=1672585009'
+	<script src='pasal-assets/wp-content/plugins/mha_activity/mha_activitye084.js?ver=1672585009'
 		id='process_mhaActivity-js'></script>
 	<script
 		id='process_mhaDiyTools-js-extra'>var do_mhaDiyTools = { "ajaxurl": "https:\/\/screening.mhanational.org\/wp-admin\/admin-ajax.php" };</script>
-	<script src='penyakit-assets/wp-content/plugins/mha_activity/diy_tools6a8d.js?ver=v20221209_p2'
+	<script src='pasal-assets/wp-content/plugins/mha_activity/diy_tools6a8d.js?ver=v20221209_p2'
 		id='process_mhaDiyTools-js'></script>
 	<script
 		id='process_diyToolsExport-js-extra'>var do_mhaDiyToolsExport = { "ajaxurl": "https:\/\/screening.mhanational.org\/wp-admin\/admin-ajax.php" };</script>
-	<script src='penyakit-assets/wp-content/plugins/mha_exports/diy_exporte084.js?ver=1672585009'
+	<script src='pasal-assets/wp-content/plugins/mha_exports/diy_exporte084.js?ver=1672585009'
 		id='process_diyToolsExport-js'></script>
-	<script src='penyakit-assets/wp-content/plugins/mha_screens/assets/jquery.validate.min5152.js?ver=1.0'
+	<script src='pasal-assets/wp-content/plugins/mha_screens/assets/jquery.validate.min5152.js?ver=1.0'
 		id='mhaScreen_validate-js'></script>
 	<script
 		id='process_mhaScreenEmail-js-extra'>var do_mhaScreenEmail = { "ajaxurl": "https:\/\/screening.mhanational.org\/wp-admin\/admin-ajax.php" };</script>
-	<script src='penyakit-assets/wp-content/plugins/mha_screens/mha_screens0e7c.js?ver=1.1.20221213pm'
+	<script src='pasal-assets/wp-content/plugins/mha_screens/mha_screens0e7c.js?ver=1.1.20221213pm'
 		id='process_mhaScreenEmail-js'></script>
 	<script
 		id='process_mhaContent-js-extra'>var do_mhaContent = { "ajaxurl": "https:\/\/screening.mhanational.org\/wp-admin\/admin-ajax.php" };</script>
-	<script src='penyakit-assets/wp-content/plugins/mha_shard/inc/js/scripts92ad.js?ver=20221206_1'
+	<script src='pasal-assets/wp-content/plugins/mha_shard/inc/js/scripts92ad.js?ver=20221206_1'
 		id='process_mhaContent-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/skip-link-focus-fix5152.js?ver=1.0'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/skip-link-focus-fix5152.js?ver=1.0'
 		id='mha_s2s-skip-link-focus-fix-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/hoverIntentac14.js?ver=0.7'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/hoverIntentac14.js?ver=0.7'
 		id='mha_s2s-hover-intent-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/superfish.min7fe1.js?ver=1.7.10.1'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/superfish.min7fe1.js?ver=1.7.10.1'
 		id='mha_s2s-superfish-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/macy.min5152.js?ver=1.0' id='mha_s2s-macy-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/bootstrap/js/bootstrap.bundle.min5b31.js?ver=4.3.1'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/macy.min5152.js?ver=1.0' id='mha_s2s-macy-js'></script>
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/bootstrap/js/bootstrap.bundle.min5b31.js?ver=4.3.1'
 		id='mha_s2s-bootstrap-js-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/jquery.ui.custom.min0028.js?ver=1.13.1'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/jquery.ui.custom.min0028.js?ver=1.13.1'
 		id='mha_s2s-jqueryui-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/glide9608.js?ver=3.6.0.1' id='mha_s2s-glide-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/aos.min6c28.js?ver=3.0.0v2' id='mha_s2s-aos-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/iframe-resizer.min274c.js?ver=4.3.2'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/glide9608.js?ver=3.6.0.1' id='mha_s2s-glide-js'></script>
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/aos.min6c28.js?ver=3.0.0v2' id='mha_s2s-aos-js'></script>
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/iframe-resizer.min274c.js?ver=4.3.2'
 		id='mha_s2s-iframeresizer-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/jquery.sticky-sidebar.min3d36.js?ver=3.3.1'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/jquery.sticky-sidebar.min3d36.js?ver=3.3.1'
 		id='mha_s2s-sticky-js'></script>
-	<script src='penyakit-assets/wp-content/themes/mha_s2s/assets/js/global6834.js?ver=v20221201_2'
+	<script src='pasal-assets/wp-content/themes/mha_s2s/assets/js/global6834.js?ver=v20221201_2'
 		id='mha_s2s-global-js'></script>
-	<script src='penyakit-assets/wp-includes/js/dist/vendor/regenerator-runtime.min3937.js?ver=0.13.9'
+	<script src='pasal-assets/wp-includes/js/dist/vendor/regenerator-runtime.min3937.js?ver=0.13.9'
 		id='regenerator-runtime-js'></script>
-	<script src='penyakit-assets/wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0' id='wp-polyfill-js'></script>
-	<script src='penyakit-assets/wp-includes/js/dist/dom-ready.minded6.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
-	<script src='penyakit-assets/wp-includes/js/dist/hooks.min6c65.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
-	<script src='penyakit-assets/wp-includes/js/dist/i18n.mine57b.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+	<script src='pasal-assets/wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0' id='wp-polyfill-js'></script>
+	<script src='pasal-assets/wp-includes/js/dist/dom-ready.minded6.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+	<script src='pasal-assets/wp-includes/js/dist/hooks.min6c65.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+	<script src='pasal-assets/wp-includes/js/dist/i18n.mine57b.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
 	<script id='wp-i18n-js-after'>wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });</script>
-	<script src='penyakit-assets/wp-includes/js/dist/a11y.min65c7.js?ver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
-	<script defer='defer' src='penyakit-assets/wp-content/plugins/gravityforms/js/placeholders.jquery.min91ac.js?ver=2.6.8'
+	<script src='pasal-assets/wp-includes/js/dist/a11y.min65c7.js?ver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
+	<script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/placeholders.jquery.min91ac.js?ver=2.6.8'
 		id='gform_placeholder-js'></script>
-	<script defer='defer' src='penyakit-assets/google/www.google.com/recaptcha/apieee6.js?hl=en&amp;ver=6.1.1#038;render=explicit'
+	<script defer='defer' src='pasal-assets/google/www.google.com/recaptcha/apieee6.js?hl=en&amp;ver=6.1.1#038;render=explicit'
 		id='gform_recaptcha-js'></script>
 	<script>document.addEventListener('facetwp-refresh', function () {
 			if (FWP.facets.hasOwnProperty('location_search') && FWP.facets['location_search'].length > 0) {
@@ -2108,7 +2108,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 	<script>gform.initializeOnLoaded(function () { jQuery(document).trigger('gform_post_render', [4, 1]) });</script>
 	<script type="text/javascript">(function () {
 			var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-			sz.src = 'penyakit-assets/google/siteimproveanalytics.com/js/siteanalyze_6229968.js';
+			sz.src = 'pasal-assets/google/siteimproveanalytics.com/js/siteanalyze_6229968.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
 		})();</script>
 </body>

@@ -2,13 +2,14 @@
 
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\GejalaController;
-use App\Http\Controllers\TingkatPenyakitController;
+use App\Http\Controllers\TingkatPasalController;
 use App\Models\Diagnosa;
-use App\Models\TingkatPenyakit;
+use App\Models\TingkatPasal;
 use App\Models\KondisiUser;
 use App\Models\Gejala;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::middleware('auth')->group(function () {
             'gejala' => Gejala::all(),
             'kondisi_user' => KondisiUser::all(),
             'user' => User::all(),
-            'tingkat_penyakit' => TingkatPenyakit::all()
+            'tingkat_pasal' => TingkatPasal::all()
 
         ];
         return view('admin.dashboard', $data);
@@ -59,7 +60,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('/gejala', GejalaController::class);
-    Route::resource('/penyakit', TingkatPenyakitController::class);
+    Route::resource('/pasal', TingkatPasalController::class);
     Route::resource('/spk', DiagnosaController::class)->only('index');
 });
 

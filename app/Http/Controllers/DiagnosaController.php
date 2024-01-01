@@ -10,7 +10,7 @@ use App\Models\Gejala;
 use App\Models\Keputusan;
 use App\Models\Kode_Gejala;
 use App\Models\KondisiUser;
-use App\Models\TingkatPenyakit;
+use App\Models\TingkatPasal;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -75,24 +75,24 @@ class DiagnosaController extends Controller
             }
         }
 
-        $penyakit = TingkatPenyakit::all();
+        $pasal = TingkatPasal::all();
         $cf = 0;
-        // penyakit
+        // pasal
         $arrGejala = [];
-        for ($i = 0; $i < count($penyakit); $i++) {
+        for ($i = 0; $i < count($pasal); $i++) {
             $cfArr = [
                 "cf" => [],
-                "kode_penyakit" => []
+                "kode_pasal" => []
             ];
-            $ruleSetiapPenyakit = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_penyakit", $penyakit[$i]->kode_penyakit)->get();
-            if (count($ruleSetiapPenyakit) > 0) {
-                foreach ($ruleSetiapPenyakit as $ruleKey) {
+            $ruleSetiapPasal = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_pasal", $pasal[$i]->kode_pasal)->get();
+            if (count($ruleSetiapPasal) > 0) {
+                foreach ($ruleSetiapPasal as $ruleKey) {
                     $bobot = $bobotPilihan[array_search($ruleKey->kode_gejala, array_column($bobotPilihan, 0))][1];
                     $mb = $ruleKey->mb * $bobot;
                     $md = $ruleKey->md * $bobot;
                     $cf = $mb - $md;
                     array_push($cfArr["cf"], $cf);
-                    array_push($cfArr["kode_penyakit"], $ruleKey->kode_penyakit);
+                    array_push($cfArr["kode_pasal"], $ruleKey->kode_pasal);
                 }
                 $res = $this->getGabunganCf($cfArr);
                 array_push($arrGejala, $res);
@@ -117,7 +117,7 @@ class DiagnosaController extends Controller
 
     public function getGabunganCf($cfArr)
     {
-        // if ($cfArr["kode_penyakit"][0] == "P004") {
+        // if ($cfArr["kode_pasal"][0] == "P004") {
         //     # code...
         //     dd($cfArr);
         // }
@@ -131,7 +131,7 @@ class DiagnosaController extends Controller
         if (count($cfArr["cf"]) == 1) {
             return [
                 "value" => strval($cfArr["cf"][0]),
-                "kode_penyakit" => $cfArr["kode_penyakit"][0]
+                "kode_pasal" => $cfArr["kode_pasal"][0]
             ];
         }
 
@@ -149,7 +149,7 @@ class DiagnosaController extends Controller
 
         return [
             "value" => "$cfoldGabungan",
-            "kode_penyakit" => $cfArr["kode_penyakit"][0]
+            "kode_pasal" => $cfArr["kode_pasal"][0]
         ];
     }
 
@@ -165,7 +165,7 @@ class DiagnosaController extends Controller
             // print_r(floatval($val["value"]));
             if (floatval($val["value"]) > $int) {
                 $diagnosa_dipilih["value"] = floatval($val["value"]);
-                $diagnosa_dipilih["kode_penyakit"] = TingkatPenyakit::where("kode_penyakit", $val["kode_penyakit"])->first();
+                $diagnosa_dipilih["kode_pasal"] = TingkatPasal::where("kode_pasal", $val["kode_pasal"])->first();
                 $int = floatval($val["value"]);
             }
         }
@@ -177,8 +177,8 @@ class DiagnosaController extends Controller
             array_push($kodeGejala, $key[0]);
         }
         // dd($kodeGejala);
-        $kode_penyakit = $diagnosa_dipilih["kode_penyakit"]->kode_penyakit;
-        $pakar = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_penyakit", $kode_penyakit)->get();
+        $kode_pasal = $diagnosa_dipilih["kode_pasal"]->kode_pasal;
+        $pakar = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_pasal", $kode_pasal)->get();
         // dd($pakar);
         $gejala_by_user = [];
         foreach ($pakar as $key) {
@@ -207,7 +207,7 @@ class DiagnosaController extends Controller
         $hasil = $this->getGabunganCf($cfKombinasi);
         // dd($hasil);
 
-        $artikel = Artikel::where('kode_penyakit', $kode_penyakit)->first();
+        $artikel = Artikel::where('kode_pasal', $kode_pasal)->first();
 
         return view('clients.cl_diagnosa_result', [
             "diagnosa" => $diagnosa,
@@ -232,7 +232,7 @@ class DiagnosaController extends Controller
             }
             return [
                 "cf" => $cfComb,
-                "kode_penyakit" => ["0"]
+                "kode_pasal" => ["0"]
             ];
         } else {
             return "Data tidak valid";

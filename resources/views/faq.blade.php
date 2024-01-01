@@ -75,7 +75,7 @@
             <ul>
               <li><a href="/form-faq">Diagnosa</a></li>
               <li><a href="/gejala">Gejala</a></li>
-              <li><a href="/penyakit">Penyakit</a></li>
+              <li><a href="/penyakit">Pasal</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#about">Contact</a></li>

@@ -20,31 +20,31 @@
                 </div>
             @endif
             <div class="mt-2 pt-3 d-flex ms-auto">
-                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#penyakitModal">
-                    <i class="bi bi-plus-circle-fill"> Tambah Penyakit</i>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#pasalModal">
+                    <i class="bi bi-plus-circle-fill"> Tambah Pasal</i>
                 </button>
             </div>
             <table id="tabel-gejala" class="table table-bordered table-hover my-2">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Kode Penyakit</th>
-                    <th scope="col">Penyakit</th>
+                    <th scope="col">Kode Pasal</th>
+                    <th scope="col">Pasal</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($penyakit as $item)
+                    @foreach ($pasal as $item)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{$item->kode_penyakit}}</td>
-                            <td>{{$item->penyakit}}</td>
+                            <td>{{$item->kode_pasal}}</td>
+                            <td>{{$item->pasal}}</td>
                             <td>
                                 <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInput('{{ $item->id }}',
-                                '{{$item->kode_penyakit}}', '{{$item->penyakit}}'), actionUbahpenyakit('{{ route('penyakit.update', $item->id) }}')">
+                                '{{$item->kode_pasal}}', '{{$item->pasal}}'), actionUbahpasal('{{ route('pasal.update', $item->id) }}')">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
-                                <form action="{{ route('penyakit.destroy', $item) }}" class="d-inline" method="POST">
+                                <form action="{{ route('pasal.destroy', $item) }}" class="d-inline" method="POST">
                                     @method('DELETE')
                                     @csrf()
                                     <button type="submit" class="btn btn-outline-danger">
@@ -57,7 +57,7 @@
                 </tbody>
               </table>
 
-              @include('components.admin_modal_penyakit_edit')
+              @include('components.admin_modal_pasal_edit')
           </div>
         </div>
     </div>
