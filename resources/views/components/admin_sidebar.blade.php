@@ -15,7 +15,7 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('cl.form') }}">
         <i class="bi bi-clipboard-check"></i>
-        <span>Diagnosa</span>
+        <span>Putusan</span>
       </a>
     </li><!-- End Identifikasi Page Nav -->
     <li class="nav-item">
@@ -35,7 +35,7 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('spk.index') }}">
         <i class="bi bi-clipboard2-data"></i>
-        <span>Hasil Diagnosa</span>
+        <span>Hasil Putusan</span>
       </a>
     </li><!-- End Pasal Page Nav -->
 

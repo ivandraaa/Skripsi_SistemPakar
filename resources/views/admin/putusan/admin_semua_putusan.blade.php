@@ -12,28 +12,28 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Diagnosa ID</th>
+                            <th scope="col">Putusan ID</th>
                             <th scope="col">Pasal</th>
                             <!-- <th scope="col">Persentase</th> -->
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($diagnosa as $item)
+                            @foreach ($putusan as $item)
                                 <?php $int = 0 ?>
-                                <?php $data_diagnosa = json_decode($item->data_diagnosa, true) ?>
-                                <?php foreach ($data_diagnosa as $val ) {
+                                <?php $data_putusan = json_decode($item->data_putusan, true) ?>
+                                <?php foreach ($data_putusan as $val ) {
                                     if (floatval($val["value"]) > $int) {
-                                        $diagnosa_dipilih["value"] = floatval($val["value"]);
-                                        $diagnosa_dipilih["kode_pasal"] = App\Models\TingkatPasal::where("kode_pasal", $val["kode_pasal"])->first();
+                                        $putusan_dipilih["value"] = floatval($val["value"]);
+                                        $putusan_dipilih["kode_pasal"] = App\Models\TingkatPasal::where("kode_pasal", $val["kode_pasal"])->first();
                                         $int = floatval($val["value"]);
                                     }
                                 } ?>
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $item->diagnosa_id }}</td>
-                                    <td> {{ $diagnosa_dipilih["kode_pasal"]->kode_pasal }} | {{ $diagnosa_dipilih["kode_pasal"]->pasal }}</td>
-                                    <!-- <td>{{ ($diagnosa_dipilih["value"] * 100) }} %</td> -->
-                                    <td><a class="p-2" href="{{ route('spk.result', ["diagnosa_id" => $item->diagnosa_id]) }}">Detail</a></td>
+                                    <td>{{ $item->putusan_id }}</td>
+                                    <td> {{ $putusan_dipilih["kode_pasal"]->kode_pasal }} | {{ $putusan_dipilih["kode_pasal"]->pasal }}</td>
+                                    <!-- <td>{{ ($putusan_dipilih["value"] * 100) }} %</td> -->
+                                    <td><a class="p-2" href="{{ route('spk.result', ["putusan_id" => $item->putusan_id]) }}">Detail</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

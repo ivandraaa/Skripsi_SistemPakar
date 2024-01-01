@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\PutusanController;
 use App\Http\Controllers\IdentifikasiController;
 use App\Http\Controllers\TingkatPasalController;
-use App\Models\Diagnosa;
+use App\Models\Putusan;
 use App\Models\TingkatPasal;
 use App\Models\KondisiUser;
 use App\Models\Identifikasi;
@@ -61,7 +61,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/identifikasi', IdentifikasiController::class);
     Route::resource('/pasal', TingkatPasalController::class);
-    Route::resource('/spk', DiagnosaController::class)->only('index');
+    Route::resource('/spk', PutusanController::class)->only('index');
 });
 
 
@@ -82,7 +82,7 @@ Route::get('/form-faq', function () {
     return view('faq', $data);
 })->name('cl.form');
 
-Route::resource('/spk', DiagnosaController::class);
-Route::get('/spk/result/{diagnosa_id}', [DiagnosaController::class, 'diagnosaResult'])->name('spk.result');
+Route::resource('/spk', PutusanController::class);
+Route::get('/spk/result/{putusan_id}', [PutusanController::class, 'putusanResult'])->name('spk.result');
 
 Auth::routes();

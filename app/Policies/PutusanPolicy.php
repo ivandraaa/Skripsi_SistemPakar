@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Diagnosa;
+use App\Models\Putusan;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class DiagnosaPolicy
+class PutusanPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class DiagnosaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Diagnosa $diagnosa)
+    public function view(User $user, Putusan $putusan)
     {
         //
     }
@@ -48,10 +48,10 @@ class DiagnosaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Diagnosa $diagnosa)
+    public function update(User $user, Putusan $putusan)
     {
         //
     }
@@ -60,10 +60,10 @@ class DiagnosaPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Diagnosa $diagnosa)
+    public function delete(User $user, Putusan $putusan)
     {
         //
     }
@@ -72,10 +72,10 @@ class DiagnosaPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Diagnosa $diagnosa)
+    public function restore(User $user, Putusan $putusan)
     {
         //
     }
@@ -84,10 +84,10 @@ class DiagnosaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Diagnosa $diagnosa)
+    public function forceDelete(User $user, Putusan $putusan)
     {
         //
     }

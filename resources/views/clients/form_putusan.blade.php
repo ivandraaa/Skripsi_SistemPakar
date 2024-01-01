@@ -1,5 +1,5 @@
 @extends('clients.cl_main')
-@section('title', 'Form Diagnosa')
+@section('title', 'Form Putusan')
 
 {{-- isi --}}
 @section('cl_content')

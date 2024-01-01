@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Diagnosa;
-use App\Http\Requests\StoreDiagnosaRequest;
-use App\Http\Requests\UpdateDiagnosaRequest;
+use App\Models\Putusan;
+use App\Http\Requests\StorePutusanRequest;
+use App\Http\Requests\UpdatePutusanRequest;
 use App\Models\Artikel;
 use App\Models\Identifikasi;
 use App\Models\Keputusan;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\DB;
 use function PHPSTORM_META\map;
 use function PHPSTORM_META\type;
 
-class DiagnosaController extends Controller
+class PutusanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,10 +28,10 @@ class DiagnosaController extends Controller
      */
     public function index()
     {
-        $diagnosa = Diagnosa::all();
+        $putusan = Putusan::all();
 
-        return view('admin.diagnosa.admin_semua_diagnosa', [
-            "diagnosa" => $diagnosa,
+        return view('admin.putusan.admin_semua_putusan', [
+            "putusan" => $putusan,
         ]);
     }
 
@@ -47,16 +47,16 @@ class DiagnosaController extends Controller
             'kondisi_user' => KondisiUser::all()
         ];
 
-        return view('clients.form_diagnosa', $data);
+        return view('clients.form_putusan', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDiagnosaRequest  $request
+     * @param  \App\Http\Requests\StorePutusanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDiagnosaRequest $request)
+    public function store(StorePutusanRequest $request)
     {
         $filteredArray = $request->post('kondisi');
         $kondisi = array_filter($filteredArray, function ($value) {
@@ -105,14 +105,14 @@ class DiagnosaController extends Controller
         // print_r($arrIdentifikasi);
         // echo "<br>";
 
-        $diagnosa_id = uniqid();
-        $ins =  Diagnosa::create([
-            'diagnosa_id' => strval($diagnosa_id),
-            'data_diagnosa' => json_encode($arrIdentifikasi),
+        $putusan_id = uniqid();
+        $ins =  Putusan::create([
+            'putusan_id' => strval($putusan_id),
+            'data_putusan' => json_encode($arrIdentifikasi),
             'kondisi' => json_encode($bobotPilihan)
         ]);
         // dd($ins);
-        return redirect()->route('spk.result', ["diagnosa_id" => $diagnosa_id]);
+        return redirect()->route('spk.result', ["putusan_id" => $putusan_id]);
     }
 
     public function getGabunganCf($cfArr)
@@ -153,23 +153,23 @@ class DiagnosaController extends Controller
         ];
     }
 
-    public function diagnosaResult($diagnosa_id)
+    public function putusanResult($putusan_id)
     {
-        $diagnosa = Diagnosa::where('diagnosa_id', $diagnosa_id)->first();
-        $identifikasi = json_decode($diagnosa->kondisi, true);
-        $data_diagnosa = json_decode($diagnosa->data_diagnosa, true);
-        // dd($data_diagnosa);
+        $putusan = Putusan::where('putusan_id', $putusan_id)->first();
+        $identifikasi = json_decode($putusan->kondisi, true);
+        $data_putusan = json_decode($putusan->data_putusan, true);
+        // dd($data_putusan);
         $int = 0.0;
-        $diagnosa_dipilih = [];
-        foreach ($data_diagnosa as $val) {
+        $putusan_dipilih = [];
+        foreach ($data_putusan as $val) {
             // print_r(floatval($val["value"]));
             if (floatval($val["value"]) > $int) {
-                $diagnosa_dipilih["value"] = floatval($val["value"]);
-                $diagnosa_dipilih["kode_pasal"] = TingkatPasal::where("kode_pasal", $val["kode_pasal"])->first();
+                $putusan_dipilih["value"] = floatval($val["value"]);
+                $putusan_dipilih["kode_pasal"] = TingkatPasal::where("kode_pasal", $val["kode_pasal"])->first();
                 $int = floatval($val["value"]);
             }
         }
-        // dd($diagnosa_dipilih);
+        // dd($putusan_dipilih);
         // dd($identifikasi);
 
         $kodeIdentifikasi = [];
@@ -177,7 +177,7 @@ class DiagnosaController extends Controller
             array_push($kodeIdentifikasi, $key[0]);
         }
         // dd($kodeIdentifikasi);
-        $kode_pasal = $diagnosa_dipilih["kode_pasal"]->kode_pasal;
+        $kode_pasal = $putusan_dipilih["kode_pasal"]->kode_pasal;
         $pakar = Keputusan::whereIn("kode_identifikasi", $kodeIdentifikasi)->where("kode_pasal", $kode_pasal)->get();
         // dd($pakar);
         $identifikasi_by_user = [];
@@ -209,11 +209,11 @@ class DiagnosaController extends Controller
 
         $artikel = Artikel::where('kode_pasal', $kode_pasal)->first();
 
-        return view('clients.cl_diagnosa_result', [
-            "diagnosa" => $diagnosa,
-            "diagnosa_dipilih" => $diagnosa_dipilih,
+        return view('clients.cl_putusan_result', [
+            "putusan" => $putusan,
+            "putusan_dipilih" => $putusan_dipilih,
             "identifikasi" => $identifikasi,
-            "data_diagnosa" => $data_diagnosa,
+            "data_putusan" => $data_putusan,
             "pakar" => $pakar,
             "identifikasi_by_user" => $identifikasi_by_user,
             "cf_kombinasi" => $cfKombinasi,
@@ -243,10 +243,10 @@ class DiagnosaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Http\Response
      */
-    public function show(Diagnosa $diagnosa)
+    public function show(Putusan $putusan)
     {
         //
     }
@@ -254,10 +254,10 @@ class DiagnosaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Diagnosa $diagnosa)
+    public function edit(Putusan $putusan)
     {
         //
     }
@@ -265,11 +265,11 @@ class DiagnosaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDiagnosaRequest  $request
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Http\Requests\UpdatePutusanRequest  $request
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDiagnosaRequest $request, Diagnosa $diagnosa)
+    public function update(UpdatePutusanRequest $request, Putusan $putusan)
     {
         //
     }
@@ -277,10 +277,10 @@ class DiagnosaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Diagnosa  $diagnosa
+     * @param  \App\Models\Putusan  $putusan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Diagnosa $diagnosa)
+    public function destroy(Putusan $putusan)
     {
         //
     }
