@@ -6,15 +6,74 @@
 
 <head>
     <!-- <script>
-var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
-</script> -->
+        var gform;
+        gform || (document.addEventListener("gform_main_scripts_loaded", function() {
+            gform.scriptsLoaded = !0
+        }), window.addEventListener("DOMContentLoaded", function() {
+            gform.domLoaded = !0
+        }), gform = {
+            domLoaded: !1,
+            scriptsLoaded: !1,
+            initializeOnLoaded: function(o) {
+                gform.domLoaded && gform.scriptsLoaded ? o() : !gform.domLoaded && gform.scriptsLoaded ? window
+                    .addEventListener("DOMContentLoaded", o) : document.addEventListener(
+                        "gform_main_scripts_loaded", o)
+            },
+            hooks: {
+                action: {},
+                filter: {}
+            },
+            addAction: function(o, n, r, t) {
+                gform.addHook("action", o, n, r, t)
+            },
+            addFilter: function(o, n, r, t) {
+                gform.addHook("filter", o, n, r, t)
+            },
+            doAction: function(o) {
+                gform.doHook("action", o, arguments)
+            },
+            applyFilters: function(o) {
+                return gform.doHook("filter", o, arguments)
+            },
+            removeAction: function(o, n) {
+                gform.removeHook("action", o, n)
+            },
+            removeFilter: function(o, n, r) {
+                gform.removeHook("filter", o, n, r)
+            },
+            addHook: function(o, n, r, t, i) {
+                null == gform.hooks[o][n] && (gform.hooks[o][n] = []);
+                var e = gform.hooks[o][n];
+                null == i && (i = n + "_" + e.length), gform.hooks[o][n].push({
+                    tag: i,
+                    callable: r,
+                    priority: t = null == t ? 10 : t
+                })
+            },
+            doHook: function(n, o, r) {
+                var t;
+                if (r = Array.prototype.slice.call(r, 1), null != gform.hooks[n][o] && ((o = gform.hooks[n][o])
+                        .sort(function(o, n) {
+                            return o.priority - n.priority
+                        }), o.forEach(function(o) {
+                            "function" != typeof(t = o.callable) && (t = window[t]), "action" == n ? t
+                                .apply(null, r) : r[0] = t.apply(null, r)
+                        })), "filter" == n) return r[0]
+            },
+            removeHook: function(o, n, t, i) {
+                var r;
+                null != gform.hooks[o][n] && (r = (r = gform.hooks[o][n]).filter(function(o, n, r) {
+                    return !!(null != i && i != o.tag || null != t && t != o.priority)
+                }), gform.hooks[o][n] = r)
+            }
+        });
+    </script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.media='all';" id="ao_optimized_gfonts"
         href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,italic300,italic400,italic600,italic700%7CNoto+Sans:400,700,italic400,italic700&amp;display=swap" />
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="https://screening.mhanational.org/favicon.ico">
     <link rel="icon" href="pasal-assets/favicon.png">
     <link rel="apple-touch-icon" href="pasal-assets/apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -31,11 +90,10 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
         window.dataLayer.push({
             'event': 'screen_test'
         });
-
     </script>
     <script src="pasal-assets/google/www.googleoptimize.com/optimize3af5.js?id=OPT-PNLZZ5R"></script>
     <script>
-        (function (w, d, s, l, i) {
+        (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -49,15 +107,13 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                 'pasal-assets/google/www.googletagmanager.com/gtm5445.html?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-N3TWZFC');
-
     </script>
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
     <script>
-        (function (html) {
+        (function(html) {
             html.className = html.className.replace(/\bno-js\b/, 'js')
         })(document.documentElement);
-
     </script>
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <link media="all"
@@ -66,11 +122,12 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
     <link media="print"
         href="pasal-assets/wp-content/cache/autoptimize/css/autoptimize_5653ccbbff2bf3fde17022871919df8b.css"
         rel="stylesheet" />
-    <title>Identifikasi Pelanggaran Tindak Pidana Kecelakaan Lalu Lintas</title>
+    <title>Sistem Pakar Tindak Pidana Kecelakaan Lalu Lintas
+    </title>
     <meta name="description"
         content="Take our depression test if you are feeling overwhelming sadness—it&#039;s free, quick, confidential, and scientifically validated." />
     <link rel="canonical" href="index.html" />
-    
+
     <style id='global-styles-inline-css'>
         body {
             --wp--preset--color--black: #000000;
@@ -403,14 +460,13 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
             font-size: 1.5em;
             line-height: 1.6;
         }
-
     </style>
     <link rel='stylesheet' id='dashicons-css' href='pasal-assets/wp-includes/css/dashicons.min6a4d.css?ver=6.1.1'
         media='all' />
     <script src='pasal-assets/wp-includes/js/jquery/jquery.mina7a0.js?ver=3.6.1' id='jquery-core-js'></script>
-    <script src='pasal-assets/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'>
-    </script>
-    <!--[if lt IE 9]> <script src='https://screening.mhanational.org/wp-content/themes/mha_s2s/assets/js/html5.js?ver=3.7.3' id='html5-js'></script> <![endif]-->
+    <script src='pasal-assets/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
+    <!--[if lt IE 9]> <script src='https://screening.mhanational.org/wp-content/themes/mha_s2s/assets/js/html5.js?ver=3.7.3' id='html5-js'>
+    </script> <![endif]-->
     <script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/jquery.json.min91ac.js?ver=2.6.8'
         id='gform_json-js'></script>
     <script id='gform_gravityforms-js-extra'>
@@ -484,18 +540,17 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                 "images_url": "https:\/\/screening.mhanational.org\/wp-content\/plugins\/gravityforms\/images"
             }
         };
-
     </script>
     <script id='gform_gravityforms-js-before'>
         var gform;
-        gform || (document.addEventListener("gform_main_scripts_loaded", function () {
+        gform || (document.addEventListener("gform_main_scripts_loaded", function() {
             gform.scriptsLoaded = !0
-        }), window.addEventListener("DOMContentLoaded", function () {
+        }), window.addEventListener("DOMContentLoaded", function() {
             gform.domLoaded = !0
         }), gform = {
             domLoaded: !1,
             scriptsLoaded: !1,
-            initializeOnLoaded: function (o) {
+            initializeOnLoaded: function(o) {
                 gform.domLoaded && gform.scriptsLoaded ? o() : !gform.domLoaded && gform.scriptsLoaded ?
                     window.addEventListener("DOMContentLoaded", o) : document.addEventListener(
                         "gform_main_scripts_loaded", o)
@@ -504,25 +559,25 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                 action: {},
                 filter: {}
             },
-            addAction: function (o, n, r, t) {
+            addAction: function(o, n, r, t) {
                 gform.addHook("action", o, n, r, t)
             },
-            addFilter: function (o, n, r, t) {
+            addFilter: function(o, n, r, t) {
                 gform.addHook("filter", o, n, r, t)
             },
-            doAction: function (o) {
+            doAction: function(o) {
                 gform.doHook("action", o, arguments)
             },
-            applyFilters: function (o) {
+            applyFilters: function(o) {
                 return gform.doHook("filter", o, arguments)
             },
-            removeAction: function (o, n) {
+            removeAction: function(o, n) {
                 gform.removeHook("action", o, n)
             },
-            removeFilter: function (o, n, r) {
+            removeFilter: function(o, n, r) {
                 gform.removeHook("filter", o, n, r)
             },
-            addHook: function (o, n, r, t, i) {
+            addHook: function(o, n, r, t, i) {
                 null == gform.hooks[o][n] && (gform.hooks[o][n] = []);
                 var e = gform.hooks[o][n];
                 null == i && (i = n + "_" + e.length), gform.hooks[o][n].push({
@@ -531,25 +586,24 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                     priority: t = null == t ? 10 : t
                 })
             },
-            doHook: function (n, o, r) {
+            doHook: function(n, o, r) {
                 var t;
                 if (r = Array.prototype.slice.call(r, 1), null != gform.hooks[n][o] && ((o = gform.hooks[n][
                         o
-                    ]).sort(function (o, n) {
+                    ]).sort(function(o, n) {
                         return o.priority - n.priority
-                    }), o.forEach(function (o) {
-                        "function" != typeof (t = o.callable) && (t = window[t]), "action" == n ? t
+                    }), o.forEach(function(o) {
+                        "function" != typeof(t = o.callable) && (t = window[t]), "action" == n ? t
                             .apply(null, r) : r[0] = t.apply(null, r)
                     })), "filter" == n) return r[0]
             },
-            removeHook: function (o, n, t, i) {
+            removeHook: function(o, n, t, i) {
                 var r;
-                null != gform.hooks[o][n] && (r = (r = gform.hooks[o][n]).filter(function (o, n, r) {
+                null != gform.hooks[o][n] && (r = (r = gform.hooks[o][n]).filter(function(o, n, r) {
                     return !!(null != i && i != o.tag || null != t && t != o.priority)
                 }), gform.hooks[o][n] = r)
             }
         });
-
     </script>
     <script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/gravityforms.min91ac.js?ver=2.6.8'
         id='gform_gravityforms-js'></script>
@@ -557,7 +611,6 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
         var gf_legacy = {
             "is_legacy": "1"
         };
-
     </script>
     <script defer='defer' src='pasal-assets/wp-content/plugins/gravityforms/js/conditional_logic.min91ac.js?ver=2.6.8'
         id='gform_conditional_logic-js'></script>
@@ -565,9 +618,9 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
     <link rel="alternate" type="application/json" href="https://screening.mhanational.org/wp-json/wp/v2/screen/22" />
     <link rel='shortlink' href='https://screening.mhanational.org/?p=22' />
     <script>
-        (function ($) {
+        (function($) {
 
-            $(document).on('click', '.sort-order-button', function () {
+            $(document).on('click', '.sort-order-button', function() {
                 var val = $(this).attr('data-value');
                 FWP.facets['sort_by'] = [val];
                 FWP.toggleOverlay('on');
@@ -575,7 +628,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                 FWP.setHash();
             });
 
-            $(document).on('click', '.language-toggle', function () {
+            $(document).on('click', '.language-toggle', function() {
                 if (FWP.facets.language[0] == 1 || FWP.facets.language[0] == '1') {
                     FWP.facets['language'] = ['0'];
                     $(this).removeClass('checked');
@@ -591,12 +644,12 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
             /**
              * FacetWP Content Animations
              */
-            $(document).on('facetwp-refresh', function () {
+            $(document).on('facetwp-refresh', function() {
                 $('.facetwp-template').addClass('loaded').animate({
                     opacity: .25
                 }, 150);
             });
-            $(document).on('facetwp-loaded', function () {
+            $(document).on('facetwp-loaded', function() {
                 $('.facetwp-template').addClass('loaded').animate({
                     opacity: 1
                 }, 150);
@@ -604,7 +657,7 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 
 
             var firstLoad = 0;
-            $(document).on('facetwp-loaded', function () {
+            $(document).on('facetwp-loaded', function() {
 
                 // Change the current sort display on the dropdown
                 if ('undefined' !== typeof FWP.facets['sort_by']) {
@@ -637,8 +690,8 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
 </head>
 
 <body class="screen-template-default single single-screen postid-22 not-front"> <noscript><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-N3TWZFC" height="0" width="0"
-        style="display:none;visibility:hidden"></iframe></noscript> 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-N3TWZFC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <div id="page" class="site">
         <header id="header" class="clearfix">
             <div class="wrap normal"> <a id="logo" href="/"><img
@@ -654,10 +707,12 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                                 <ul class="sub-menu">
                                     <li id="menu-item-16362"
                                         class="wide bold menu-item menu-item-type-post_type menu-item-object-page menu-item-16362">
-                                        <a href="/identifikasi">Identifikasi</a></li>
+                                        <a href="/identifikasi">Identifikasi</a>
+                                    </li>
                                     <li id="menu-item-3054"
                                         class="wide bold menu-item menu-item-type-post_type menu-item-object-page menu-item-3054">
-                                        <a href="/pasal">Pasal</a></li>
+                                        <a href="/pasal">Pasal</a>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -695,8 +750,10 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                                                 <li id="field_1_4"
                                                     class="gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_4">
-                                                    <p><strong>Tidak semua field harus diisi,</strong> jadi pastikan untuk memberikan
-                                                        jawaban yang tepat sesuai dengan kondisi kecelakaan lalu lintas pada Tempat Kejadian Perkara.
+                                                    <p><strong>Tidak semua field harus diisi,</strong> jadi pastikan
+                                                        untuk memberikan
+                                                        jawaban yang tepat sesuai dengan kondisi kecelakaan lalu lintas
+                                                        pada Tempat Kejadian Perkara.
                                                     </p>
                                                 </li>
                                                 <li id="field_1_38"
@@ -704,54 +761,61 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                                                     data-js-reload="field_1_38">
                                                     <div class='ginput_container ginput_container_text'><input
                                                             name='input_38' id='input_1_38' type='hidden'
-                                                            class='gform_hidden' aria-invalid="false" value='' /></div>
+                                                            class='gform_hidden' aria-invalid="false"
+                                                            value='' /></div>
                                                 </li>
                                                 <li id="field_1_39"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
-                                                    data-js-reload="field_1_39"><input name="input_39" id="input_1_39"
-                                                        type="hidden" class="gform_hidden" aria-invalid="false"
-                                                        value="22"></li>
+                                                    data-js-reload="field_1_39"><input name="input_39"
+                                                        id="input_1_39" type="hidden" class="gform_hidden"
+                                                        aria-invalid="false" value="22"></li>
                                                 <li id="field_1_40"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
-                                                    data-js-reload="field_1_40"><input name="input_40" id="input_1_40"
-                                                        type="hidden" class="gform_hidden" aria-invalid="false"
-                                                        value="7878e1122b99483fc88d5dbe4c974e93"></li>
+                                                    data-js-reload="field_1_40"><input name="input_40"
+                                                        id="input_1_40" type="hidden" class="gform_hidden"
+                                                        aria-invalid="false" value="7878e1122b99483fc88d5dbe4c974e93">
+                                                </li>
                                                 <li id="field_1_41"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_41">
                                                     <div class='ginput_container ginput_container_text'><input
                                                             name='input_41' id='input_1_41' type='hidden'
-                                                            class='gform_hidden' aria-invalid="false" value='' /></div>
+                                                            class='gform_hidden' aria-invalid="false"
+                                                            value='' /></div>
                                                 </li>
                                                 <li id="field_1_47"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_47">
                                                     <div class='ginput_container ginput_container_text'><input
                                                             name='input_47' id='input_1_47' type='hidden'
-                                                            class='gform_hidden' aria-invalid="false" value='' /></div>
+                                                            class='gform_hidden' aria-invalid="false"
+                                                            value='' /></div>
                                                 </li>
                                                 <li id="field_1_58"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_58">
                                                     <div class='ginput_container ginput_container_text'><input
                                                             name='input_58' id='input_1_58' type='hidden'
-                                                            class='gform_hidden' aria-invalid="false" value='' /></div>
+                                                            class='gform_hidden' aria-invalid="false"
+                                                            value='' /></div>
                                                 </li>
                                                 <li id="field_1_59"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_59">
                                                     <div class='ginput_container ginput_container_text'><input
                                                             name='input_59' id='input_1_59' type='hidden'
-                                                            class='gform_hidden' aria-invalid="false" value='' /></div>
+                                                            class='gform_hidden' aria-invalid="false"
+                                                            value='' /></div>
                                                 </li>
                                                 <li id="field_1_60"
                                                     class="gfield gform_hidden field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_60">
                                                     <div class='ginput_container ginput_container_text'><input
                                                             name='input_60' id='input_1_60' type='hidden'
-                                                            class='gform_hidden' aria-invalid="false" value='' /></div>
+                                                            class='gform_hidden' aria-invalid="false"
+                                                            value='' /></div>
                                                 </li>
-                                                @foreach($identifikasi as $item)
+                                                @foreach ($identifikasi as $item)
                                                     <li id="field_{{ $loop->iteration }}"
                                                         class="gfield question gfield_contains_required field_sublabel_below field_description_above gfield_visibility_visible"
                                                         data-js-reload="field_{{ $loop->iteration }}">
@@ -762,12 +826,13 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
                                                         <div class='ginput_container ginput_container_radio'>
                                                             <ul class='gfield_radio'
                                                                 id='input_{{ $loop->iteration }}'>
-                                                                @foreach($kondisi_user as $kondisi)
+                                                                @foreach ($kondisi_user as $kondisi)
                                                                     <li style='font-size: 14px;'
                                                                         class='gchoice gchoice_{{ $loop->parent->iteration }}_{{ $loop->iteration }}'>
                                                                         <input
                                                                             name='input_{{ $loop->parent->iteration }}'
-                                                                            type='radio' value='{{ $kondisi->nilai }}'
+                                                                            type='radio'
+                                                                            value='{{ $kondisi->nilai }}'
                                                                             id='choice_{{ $loop->parent->iteration }}_{{ $loop->iteration }}'
                                                                             onchange="document.getElementById('kondisi_{{ $item->kode_identifikasi }}{{ $loop->parent->iteration }}').value = this.value" />
                                                                         <label
@@ -803,4 +868,5 @@ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function
         </main>
     </div>
 </body>
+
 </html>
