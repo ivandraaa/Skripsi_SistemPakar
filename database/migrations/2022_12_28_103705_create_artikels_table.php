@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->id();
-            $table->char('url_gambar')->default(null);
             $table->char('kode_pasal');
             $table->string('judul');
             $table->text('isi');
+            $table->text('referensi');
+            $table->text('kategori_pelanggaran');
             $table->timestamps();
         });
     }
