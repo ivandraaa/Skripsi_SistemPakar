@@ -119,7 +119,7 @@
         </div>
         @include('components.cl_article')
         <div >
-            <a style="align-content: flex-end" href="/dashboard" class="btn btn-primary"> KEMBALI</a>
+            <a style="align-content: flex-end" href="/form" class="btn btn-primary"> KEMBALI</a>
         </div>
        </div>
     </div>
