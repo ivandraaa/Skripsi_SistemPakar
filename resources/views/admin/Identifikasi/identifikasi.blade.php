@@ -31,10 +31,10 @@
                 <table id="tabel-identifikasi" class="table table-bordered table-hover my-2">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Kode Identifikasi</th>
-                            <th scope="col">Identifikasi</th>
-                            <th scope="col">Aksi</th>
+                            <th scope="col"> <center>#</center></th>
+                            <th scope="col"><center>Kode Identifikasi</center></th>
+                            <th scope="col"><center>Identifikasi</center></th>
+                            <th scope="col"><center>Aksi</center></th>
                         </tr>
                     </thead>
                     <tbody>

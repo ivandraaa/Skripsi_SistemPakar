@@ -18,7 +18,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Putusan ID</th>
                                 <th scope="col">Pasal</th>
-                                <!-- <th scope="col">Persentase</th> -->
+                                <th scope="col">Persentase</th>
                             </tr>
                         </thead>
                         <tbody>

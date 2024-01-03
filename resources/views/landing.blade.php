@@ -114,7 +114,7 @@
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0 mb-3">
                                         <i class="bi bi-card-checklist"></i>
-                                        <h4>Menyelesaikan Permasalahan Hukum</h4>
+                                        <h4>Menyelesaikan Permasalahan</h4>
                                         <p>Memberikan identifikasi pasal secara real-time untuk para pelaku pidana laka
                                             lantas dengan akurat secara real-time</p>
                                     </div>
