@@ -1,23 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#welcome-message').click(function() {
-                if (confirm('Apakah Anda yakin ingin logout?')) {
-                    $(this).fadeOut(300, function() {
-                        $('<form>', {
-                                'action': "{{ route('logout') }}",
-                                'method': 'POST',
-                                'style': 'display: none;'
-                            }).append(
-                                '<input type="hidden" name="_token" value="{{ csrf_token() }}">')
-                            .appendTo('body')
-                            .submit();
-                    });
-                }
-            });
-        });
-    </script>
-
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -27,8 +7,8 @@
             <span class="d-none d-lg-block">Dashboard</span>
         </a>
         @auth
-            <p class="mt-3" id="welcome-message" style="cursor: pointer; color: #009244;">Selamat datang,
-                {{ auth()->user()->name }}! (Klik untuk logout)</p>
+            <p class="mt-3" id="welcome-message" style=" color: #009244;">Selamat datang,
+                {{ auth()->user()->name }}!</p>
         @endauth
         {{-- <i class="bi bi-list toggle-sidebar-btn"></i> --}}
     </div><!-- End Logo -->
@@ -139,53 +119,6 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>Maria Hudson</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>4 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>Anna Nelson</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>6 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="message-item">
-                        <a href="#">
-                            <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                            <div>
-                                <h4>David Muldon</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>8 hrs. ago</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="dropdown-footer">
-                        <a href="#">Show all messages</a>
-                    </li>
-
                 </ul><!-- End Messages Dropdown Items -->
 
             </li><!-- End Messages Nav -->
