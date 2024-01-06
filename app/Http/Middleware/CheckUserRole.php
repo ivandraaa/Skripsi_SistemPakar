@@ -14,13 +14,13 @@ class CheckUserRole
 
         // Check if the user is logged in
         if ($user) {
-            // If the user is a regular user, restrict access and show unauthorized message
+            // If the user is a regular user, restrict access and show unauthorized view
             if ($user->role == 'user') {
-                abort(403, 'Unauthorized action. Only admins are allowed to access this resource.');
+                return response()->view('auth-error', [], 403);
             }
         } else {
-            // If the user is not logged in, provide an explanation and show the login form
-            return redirect('/login')->with('status', 'You need to log in as an admin to access this resource.');
+            // If the user is not logged in, redirect to login page
+            return redirect('/login')->with('status', 'Anda perlu masuk sebagai admin untuk mengakses sumber daya ini.');
         }
 
         return $next($request);
