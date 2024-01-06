@@ -28,22 +28,20 @@ Route::get('/', function () {
     return view('landing');
 });
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         $data = [
             'identifikasi' => Identifikasi::all(),
             'kondisi_user' => KondisiUser::all(),
             'user' => User::all(),
-            'tingkat_pasal' => TingkatPasal::all()
-
+            'tingkat_pasal' => TingkatPasal::all(),
         ];
         return view('admin.dashboard', $data);
     });
 
     Route::get('/dashboard/admin', function () {
         $data = [
-            'user' => User::all()
+            'user' => User::all(),
         ];
         return view('admin.list_admin', $data);
     });
@@ -52,23 +50,29 @@ Route::middleware('auth')->group(function () {
         return view('admin.add_admin');
     });
 
-
-
-
     Route::get('/home', function () {
         return redirect('/dashboard');
     });
 
     Route::resource('/identifikasi', IdentifikasiController::class);
-    Route::resource('/pasal', TingkatPasalController::class);
+    
+    Route::middleware('checkUserRole')->group(function () {
+        Route::resource('/pasal', TingkatPasalController::class);
+    });
+
+    Route::middleware('checkUserRole')->group(function () {
+        Route::resource('/identifikasi', IdentifikasiController::class);
+        Route::resource('/pasal', TingkatPasalController::class);
+    });
+    
+    
     Route::resource('/spk', PutusanController::class)->only('index');
 });
-
 
 Route::get('/form', function () {
     $data = [
         'identifikasi' => Identifikasi::all(),
-        'kondisi_user' => KondisiUser::all()
+        'kondisi_user' => KondisiUser::all(),
     ];
     return view('form', $data);
 });
@@ -76,9 +80,8 @@ Route::get('/form', function () {
 Route::get('/form-faq', function () {
     $data = [
         'identifikasi' => Identifikasi::all(),
-        'kondisi_user' => KondisiUser::all()
+        'kondisi_user' => KondisiUser::all(),
     ];
-
     return view('faq', $data);
 })->name('cl.form');
 
