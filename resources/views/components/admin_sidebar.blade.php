@@ -35,6 +35,13 @@
                 <span>Pasal</span>
             </a>
         </li><!-- End Pasal Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('keputusan.index') }}">
+                <i class="bi bi-patch-question"></i>
+                <span>Keputusan</span>
+            </a>
+        </li><!-- End Pasal Page Nav -->
         @endif
 
         <li class="nav-item">

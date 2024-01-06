@@ -15,7 +15,8 @@ class KeputusanController extends Controller
      */
     public function index()
     {
-        //
+        $keputusan = Keputusan::paginate(15);
+        return view('admin.keputusan.keputusan', compact('keputusan'));
     }
 
     /**
@@ -36,7 +37,18 @@ class KeputusanController extends Controller
      */
     public function store(StoreKeputusanRequest $request)
     {
-        //
+        // dd($request->all());
+        $valid = $request->validate([
+            "kode_identifikasi" => 'required:keputusan,kode_identifikasi',
+            'kode_pasal' => 'required:keputusan,kode_pasal',
+            'mb' => 'required:keputusan,mb',
+            'md' => 'required:keputusan,md',
+
+        ]);
+        Keputusan::create($valid);
+        return redirect()->route('keputusan.index')->with('pesan', '<div class="alert alert-success p-3 mt-3" role="alert">
+        Keputusan telah ditambahkan
+        </div>');
     }
 
     /**
@@ -70,7 +82,16 @@ class KeputusanController extends Controller
      */
     public function update(UpdateKeputusanRequest $request, Keputusan $keputusan)
     {
-        //
+        $valid = $request->validate([
+            "kode_identifikasi" => "required",
+            "kode_pasal" => "required",
+            "mb" => "required",
+            "md" => "required",
+        ]);
+        $keputusan->update($valid);
+        return redirect()->route('keputusan.index')->with('pesan', '<div class="alert alert-info p-3 mt-3" role="alert">
+        Keputusan telah diperbarui
+        </div>');
     }
 
     /**
@@ -81,6 +102,9 @@ class KeputusanController extends Controller
      */
     public function destroy(Keputusan $keputusan)
     {
-        //
+        $keputusan->delete();
+        return redirect()->route('keputusan.index')->with('pesan', '<div class="alert alert-danger p-3 mt-3" role="alert">
+        Keputusan telah dihapus
+        </div>');
     }
 }
