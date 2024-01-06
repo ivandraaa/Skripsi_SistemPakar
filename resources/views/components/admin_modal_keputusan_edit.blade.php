@@ -25,13 +25,11 @@
                             <label for="kode-pasal">Kode Pasal</label>
                         </div>
                         <div class="form-floating mb-3 p-2 mx-2">
-                            <input type="text" class="form-control" id="mb" placeholder="mb"
-                                name="mb">
+                            <input type="text" class="form-control" id="mb" placeholder="mb" name="mb">
                             <label for="mb">MB</label>
                         </div>
                         <div class="form-floating mb-3 p-2 mx-2">
-                            <input type="text" class="form-control" id="md" placeholder="md"
-                                name="md">
+                            <input type="text" class="form-control" id="md" placeholder="md" name="md">
                             <label for="md">MD</label>
                         </div>
                     </div>
@@ -71,8 +69,7 @@
                             <label id='main_app' for="kode-pasal">kode Pasal</label>
                         </div>
                         <div class="form-floating mb-3 p-2 mx-2">
-                            <input type="text" class="form-control" id="mb" placeholder="mb"
-                                name="mb">
+                            <input type="text" class="form-control" id="mb" placeholder="mb" name="mb">
                             <label id='main_app' for="mb">MB</label>
                         </div>
                         <div class="form-floating mb-3 p-2 mx-2">

@@ -113,10 +113,8 @@
                                 {{ $putusan_dipilih['kode_pasal']->kode_pasal }} |
                                 {{ $putusan_dipilih['kode_pasal']->pasal }}
                             </h5>
-                            <p class="card-text">Jadi dapat disimpulkan bahwa tumbuhan brokoli Anda kemungkinan memiliki
-                                pasal tersebut dengan tingkat kepastian yaitu <span
+                            <p class="card-text">Jadi dapat disimpulkan bahwa pelaku tindak pidana kecelakan lalu lintas teridentifikasi pasal tersebut dengan tingkat kepastian pakar hakim sebesar <span
                                     class="fw-semibold fs-4">{{ round($hasil['value'] * 100, 2) }}</span> %</p>
-                            {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                         </div>
                     </div>
                 </div>

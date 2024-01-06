@@ -23,7 +23,7 @@
         @if(auth()->user()->role == 'admin')
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('identifikasi.index') }}">
-                <i class="bi bi-activity"></i>
+                <i class="bi bi-search"></i>
                 <span>Identifikasi</span>
             </a>
         </li><!-- End Identifikasi Page Nav -->
@@ -31,14 +31,14 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('pasal.index') }}">
-                <i class="bi bi-patch-question"></i>
+                <i class="bi bi-book"></i>
                 <span>Pasal</span>
             </a>
         </li><!-- End Pasal Page Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('keputusan.index') }}">
-                <i class="bi bi-patch-question"></i>
+                <i class="bi bi-percent"></i>
                 <span>Keputusan</span>
             </a>
         </li><!-- End Pasal Page Nav -->
@@ -72,9 +72,6 @@
             </ul>
         </li><!-- End Forms Nav -->
         @endif
-
-
-
 
         <li class="nav-item" style="nowrap">
 

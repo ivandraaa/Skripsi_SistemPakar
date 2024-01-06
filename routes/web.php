@@ -62,6 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('checkUserRole')->group(function () {
         Route::resource('/identifikasi', IdentifikasiController::class);
         Route::resource('/pasal', TingkatPasalController::class);
+        Route::resource('/keputusan', KeputusanController::class);
     });
     
     

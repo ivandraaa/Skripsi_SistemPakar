@@ -53,7 +53,7 @@
         <div class="container d-flex align-items-center">
 
             {{-- <h1 class="logo me-auto"><a href="index.html">Dr Brokoli</a></h1> --}}
-            <img class="logo me-auto" src="landing/img/logo-dr-brokoli.png" alt="Logo"
+            <img class="logo me-auto" src="landing/img/logo-es.png" alt="Logo"
                 style="width: 215px; height: 55px;">
             <!-- Uncomment below if you prefer to use an image logo -->
 
@@ -180,7 +180,7 @@
                             Jalan Ir. Sutami 36 Kentingan, Jebres, Surakarta, Jawa Tengah. Indonesia <br><br>
                             <strong>Phone:</strong> 0271-646994<br>
                             <strong>WhatsApp</strong> (+62) 851 5672 3341.<br>
-                            <strong>Email:</strong> drbrokoli@gmail.com<br>
+                            <strong>Email:</strong> campus@mail.uns.ac.id<br>
                         </p>
                     </div>
 
