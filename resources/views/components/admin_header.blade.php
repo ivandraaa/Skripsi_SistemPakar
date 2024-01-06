@@ -1,3 +1,23 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#welcome-message').click(function() {
+                if (confirm('Apakah Anda yakin ingin logout?')) {
+                    $(this).fadeOut(300, function() {
+                        $('<form>', {
+                                'action': "{{ route('logout') }}",
+                                'method': 'POST',
+                                'style': 'display: none;'
+                            }).append(
+                                '<input type="hidden" name="_token" value="{{ csrf_token() }}">')
+                            .appendTo('body')
+                            .submit();
+                    });
+                }
+            });
+        });
+    </script>
+
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -6,6 +26,10 @@
             <img src="assets/img/logo.png" alt="">
             <span class="d-none d-lg-block">Dashboard</span>
         </a>
+        @auth
+            <p class="mt-3" id="welcome-message" style="cursor: pointer; color: #009244;">Selamat datang,
+                {{ auth()->user()->name }}! (Klik untuk logout)</p>
+        @endauth
         {{-- <i class="bi bi-list toggle-sidebar-btn"></i> --}}
     </div><!-- End Logo -->
 
@@ -175,54 +199,6 @@
                     </span> --}}
                 </a><!-- End Profile Iamge Icon -->
 
-                {{-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                    <li class="dropdown-header">
-                        <h6>
-                            <h6>{{ auth()->check() ? auth()->user()->name : 'Admin' }}</h6>
-                        </h6>
-                        <span>Web Designer</span>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i class="bi bi-person"></i>
-                            <span>My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i class="bi bi-gear"></i>
-                            <span>Account Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                            <i class="bi bi-question-circle"></i>
-                            <span>Need Help?</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
-                        </a>
-                    </li>
-                </ul> --}}
             </li><!-- End Profile Nav -->
 
         </ul>

@@ -30,6 +30,25 @@
 
     <!-- Template Main CSS File -->
     <link href="landing/css/style/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#welcome-message').click(function() {
+                if (confirm('Apakah Anda yakin ingin logout?')) {
+                    $(this).fadeOut(300, function() {
+                        $('<form>', {
+                                'action': "{{ route('logout') }}",
+                                'method': 'POST',
+                                'style': 'display: none;'
+                            }).append(
+                                '<input type="hidden" name="_token" value="{{ csrf_token() }}">')
+                            .appendTo('body')
+                            .submit();
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -37,8 +56,12 @@
     <div id="topbar" class="d-flex align-items-center fixed-top">
         <div class="container d-flex justify-content-between">
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">ivdrafawwaz@student.uns.ac.id</a>
-                <i class="bi bi-phone"></i> +62 812-3780-4202
+                <i>
+                    @auth
+                        <p class="mt-3" id="welcome-message" style="cursor: pointer;">Selamat datang,
+                            {{ auth()->user()->name }}! (Klik untuk logout)</p>
+                    @endauth
+                </i>
             </div>
             <div class="d-none d-lg-flex social-links align-items-center">
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -53,8 +76,7 @@
         <div class="container d-flex align-items-center">
 
             {{-- <h1 class="logo me-auto"><a href="index.html">Dr Brokoli</a></h1> --}}
-            <img class="logo me-auto" src="landing/img/logo-es.png" alt="Logo"
-                style="width: 215px; height: 55px;">
+            <img class="logo me-auto" src="landing/img/logo-es.png" alt="Logo" style="width: 215px; height: 55px;">
             <!-- Uncomment below if you prefer to use an image logo -->
 
             <nav id="navbar" class="navbar order-last order-lg-0">
@@ -73,9 +95,6 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-
-            <a href="/login" class="appointment-btn scrollto"><span class="d-none d-md-inline">Log</span> In</a>
-
         </div>
     </header><!-- End Header -->
 

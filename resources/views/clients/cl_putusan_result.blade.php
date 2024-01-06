@@ -1,12 +1,47 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#welcome-message').click(function() {
+                if (confirm('Apakah Anda yakin ingin logout?')) {
+                    $(this).fadeOut(300, function() {
+                        $('<form>', {
+                                'action': "{{ route('logout') }}",
+                                'method': 'POST',
+                                'style': 'display: none;'
+                            }).append(
+                                '<input type="hidden" name="_token" value="{{ csrf_token() }}">')
+                            .appendTo('body')
+                            .submit();
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+        <div class="contact-info d-flex align-items-center">
+            <i>
+                @auth
+                    <p class="mt-3" id="welcome-message" style="cursor: pointer; color: #009244; font-size: 14px;">Selamat datang,
+                        {{ auth()->user()->name }}! (Klik untuk logout)</p>
+                @endauth
+            </i>
+        </div>
+    </div>
+</div>
+
 @extends('clients.cl_main')
 @section('title', 'Form Putusan')
 
 @section('cl_content')
 
     <div class="container">
-        <div class="row mx-auto my-4">
+        <div class="row mx-auto">
             <div class="col-lg-10 mx-auto">
-
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -30,8 +65,8 @@
 
             {{-- section 2 --}}
             <div class="row">
-                <div class="col-lg-12 mx-auto">
-                    <div class="d-flex ">
+                <div class="">
+                    <div class="d-flex"> 
                         {{-- Pakar --}}
                         <table class="table table-hover mt-lg-5 border border-primary p-3 mx-3">
                             <thead>
@@ -121,7 +156,7 @@
             </div>
             @include('components.cl_article')
             <div>
-                <a style="align-content: flex-end" href="/form" class="btn btn-primary"> KEMBALI</a>
+                <a style="align-content: flex-end" href="/form" class="btn btn-primary mb-3"> KEMBALI</a>
             </div>
         </div>
     </div>

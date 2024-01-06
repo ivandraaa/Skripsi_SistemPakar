@@ -83,7 +83,7 @@ Route::get('/form-faq', function () {
         'kondisi_user' => KondisiUser::all(),
     ];
     return view('faq', $data);
-})->name('cl.form');
+})->name('cl.form')->middleware('auth');
 
 Route::resource('/spk', PutusanController::class);
 Route::get('/spk/result/{putusan_id}', [PutusanController::class, 'putusanResult'])->name('spk.result');
