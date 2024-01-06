@@ -93,6 +93,7 @@
                         </div><!-- End Revenue Card -->
 
                         <!-- Customers Card -->
+                        @if(auth()->user()->role == 'admin')
                         <div class="col-xxl-4 col-xl-12">
 
                             <div class="card info-card customers-card">
@@ -107,6 +108,7 @@
                                     </ul>
                                 </div>
 
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">Jumlah <span>| Admin</span></h5>
 
@@ -124,9 +126,11 @@
                                     </div>
 
                                 </div>
+                                
                             </div>
 
                         </div><!-- End Customers Card -->
+                        @endif
 
 
 

@@ -12,18 +12,22 @@
 
         <li class="nav-heading">Pengetahuan</li>
 
+        
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('cl.form') }}">
                 <i class="bi bi-clipboard-check"></i>
                 <span>Putusan</span>
             </a>
         </li><!-- End Identifikasi Page Nav -->
+
+        @if(auth()->user()->role == 'admin')
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('identifikasi.index') }}">
                 <i class="bi bi-activity"></i>
                 <span>Identifikasi</span>
             </a>
         </li><!-- End Identifikasi Page Nav -->
+        
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('pasal.index') }}">
@@ -31,6 +35,7 @@
                 <span>Pasal</span>
             </a>
         </li><!-- End Pasal Page Nav -->
+        @endif
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('spk.index') }}">
@@ -41,6 +46,7 @@
 
         <li class="nav-heading">Pengaturan</li>
 
+        @if(auth()->user()->role == 'admin')
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-person"></i><span>Admin</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -58,6 +64,7 @@
                 </li>
             </ul>
         </li><!-- End Forms Nav -->
+        @endif
 
 
 
