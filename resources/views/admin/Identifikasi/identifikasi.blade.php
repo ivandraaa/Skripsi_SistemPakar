@@ -8,6 +8,12 @@
 {{-- isi --}}
 @section('admin_content')
     <!-- Page content-->
+    <style>
+        .btn-small {
+            height: 30px; /* Adjust the height as needed */
+            margin-top: 15px; /* Add margin-top to center the button vertically */
+        }
+    </style>
     <div class="container text-center mt-lg-5 p-lg-5">
         <div class="row">
             <div class="col-lg-8 justify-content-center mx-auto">
@@ -31,7 +37,7 @@
                 <table id="tabel-identifikasi" class="table table-bordered table-hover my-2">
                     <thead>
                         <tr>
-                            <th scope="col"> <center>#</center></th>
+                            <th scope="col"><center>#</center></th>
                             <th scope="col"><center>Kode Identifikasi</center></th>
                             <th scope="col"><center>Identifikasi</center></th>
                             <th scope="col"><center>Aksi</center></th>
@@ -43,8 +49,8 @@
                                 <th scope="row">{{ $loop->iteration + $identifikasi->firstItem() - 1 }}</th>
                                 <td>{{ $item->kode_identifikasi }}</td>
                                 <td>{{ $item->identifikasi }}</td>
-                                <td>
-                                    <button class="btn btn-outline-info" data-bs-toggle="modal"
+                                <td class="d-flex">
+                                    <button class="btn btn-outline-info me-2 btn-small" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal"
                                         onclick="updateInput('{{ $item->id }}', '{{ $item->kode_identifikasi }}', '{{ $item->identifikasi }}'), actionUbahIdentifikasi('/identifikasi/{{ $item->id }}')">
                                         <i class="bi bi-pencil-square"></i>
@@ -52,8 +58,8 @@
                                     <form action="/identifikasi/{{ $item->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button type="submit" class="btn btn-outline-danger">
-                                            <i class="bi bi-trash3-fill"></i>
+                                        <button type="submit" class="btn btn-outline-danger btn-small">
+                                            <i class="bi bi-trash3-fill"></i> 
                                         </button>
                                     </form>
                                 </td>
@@ -68,5 +74,4 @@
             </div>
         </div>
     </div>
-
 @endsection

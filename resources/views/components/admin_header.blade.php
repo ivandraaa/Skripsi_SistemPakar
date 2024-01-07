@@ -6,10 +6,6 @@
             <img src="assets/img/logo.png" alt="">
             <span class="d-none d-lg-block">Dashboard</span>
         </a>
-        @auth
-            <p class="mt-3" id="welcome-message" style=" color: #009244;">Selamat datang,
-                {{ auth()->user()->name }}!</p>
-        @endauth
         {{-- <i class="bi bi-list toggle-sidebar-btn"></i> --}}
     </div><!-- End Logo -->
 
@@ -22,8 +18,11 @@
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-
-            <li class="nav-item d-block d-lg-none">
+            @auth
+                <p class="mt-3 mr-3" id="welcome-message" style=" color: #009244;">Selamat datang,
+                    {{ auth()->user()->name }}!</p>
+            @endauth
+            {{-- <li class="nav-item d-block d-lg-none">
                 <a class="nav-link nav-icon search-bar-toggle " href="#">
                     <i class="bi bi-search"></i>
                 </a>
@@ -130,7 +129,7 @@
                     {{-- <span class="d-none d-md-block dropdown-toggle ps-2">
                         <h6>{{ auth()->check() ? auth()->user()->name : 'Admin' }}</h6>
                     </span> --}}
-                </a><!-- End Profile Iamge Icon -->
+            </a><!-- End Profile Iamge Icon -->
 
             </li><!-- End Profile Nav -->
 
