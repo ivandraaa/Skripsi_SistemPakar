@@ -68,7 +68,7 @@
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-center">
-                    {{ $identifikasi->links('pagination::simple-bootstrap-5') }}
+                    {{ $identifikasi->links('pagination.custom') }}
                 </div>
                 @include('components.admin_modal_identifikasi_edit')
             </div>

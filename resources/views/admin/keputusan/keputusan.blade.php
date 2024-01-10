@@ -42,7 +42,7 @@
                     <tbody>
                         @foreach ($keputusan as $item)
                             <tr>
-                            <th scope="row">{{ $loop->iteration + $keputusan->firstItem() - 1 }}</th>
+                                <th scope="row">{{ $loop->iteration + $keputusan->firstItem() - 1 }}</th>
                                 <td>{{ $item->kode_identifikasi }}</td>
                                 <td>{{ $item->kode_pasal }}</td>
                                 <td>{{ $item->mb }}</td>
@@ -61,17 +61,15 @@
                                         </button>
                                     </form>
                                 </td>
-                                
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-center">
-                    {{ $keputusan->links('pagination::simple-bootstrap-5') }}
+                    {{ $keputusan->links('pagination.custom') }}
                 </div>
                 @include('components.admin_modal_keputusan_edit')
             </div>
         </div>
     </div>
-
 @endsection
