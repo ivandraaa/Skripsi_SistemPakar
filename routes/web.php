@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PutusanController;
 use App\Http\Controllers\KeputusanController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\IdentifikasiController;
 use App\Http\Controllers\TingkatPasalController;
 use App\Models\Putusan;
@@ -56,15 +57,16 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('/identifikasi', IdentifikasiController::class);
-    Route::resource('/keputusan', KeputusanController::class);
     Route::resource('/pasal', TingkatPasalController::class);
+    Route::resource('/keputusan', KeputusanController::class);
+    Route::resource('/artikel', ArtikelController::class);
 
     Route::middleware('checkUserRole')->group(function () {
         Route::resource('/identifikasi', IdentifikasiController::class);
         Route::resource('/pasal', TingkatPasalController::class);
         Route::resource('/keputusan', KeputusanController::class);
+        Route::resource('/artikel', ArtikelController::class);
     });
-    
     
     Route::resource('/spk', PutusanController::class)->only('index');
 });

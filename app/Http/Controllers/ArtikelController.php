@@ -15,7 +15,8 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        //
+        $artikel = Artikel::paginate(15);
+        return view('admin.artikel.artikel', compact('artikel'));
     }
 
     /**
@@ -36,7 +37,18 @@ class ArtikelController extends Controller
      */
     public function store(StoreArtikelRequest $request)
     {
-        //
+        $valid = $request->validate([
+            'judul' => 'required:artikel,judul',
+            'kode_pasal' => 'required:artikel,kode_pasal',
+            "isi" => 'required:artikel,isi',
+            'referensi' => 'required:artikel,referensi',
+            'kategori_pelanggaran' => 'required:artikel,kategori_pelanggaran',
+
+        ]);
+        Artikel::create($valid);
+        return redirect()->route('artikel.index')->with('pesan', '<div class="alert alert-success p-3 mt-3" role="alert">
+        Artikel telah ditambahkan
+        </div>');
     }
 
     /**
@@ -70,7 +82,17 @@ class ArtikelController extends Controller
      */
     public function update(UpdateArtikelRequest $request, Artikel $artikel)
     {
-        //
+        $valid = $request->validate([
+            'judul' => 'required',
+            'kode_pasal' => 'required',
+            "isi" => 'required',
+            'referensi' => 'required',
+            'kategori_pelanggaran' => 'required',
+        ]);
+        $artikel->update($valid);
+        return redirect()->route('artikel.index')->with('pesan', '<div class="alert alert-info p-3 mt-3" role="alert">
+        Artikel telah diperbarui
+        </div>');
     }
 
     /**
@@ -81,6 +103,9 @@ class ArtikelController extends Controller
      */
     public function destroy(Artikel $artikel)
     {
-        //
+        $artikel->delete();
+        return redirect()->route('artikel.index')->with('pesan', '<div class="alert alert-danger p-3 mt-3" role="alert">
+        Artikel telah dihapus
+        </div>');
     }
 }

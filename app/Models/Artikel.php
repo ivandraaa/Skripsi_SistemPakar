@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     use HasFactory;
-    protected $fillable = ["isi", "judul", "kode_pasal", "referensi", "kategori_pelanggaran"];
+    protected $fillable = ["judul", "kode_pasal", "isi", "referensi", "kategori_pelanggaran"];
 
     public function pasal()
     {

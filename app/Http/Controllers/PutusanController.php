@@ -90,7 +90,7 @@ class PutusanController extends Controller
                     $bobot = $bobotPilihan[array_search($ruleKey->kode_identifikasi, array_column($bobotPilihan, 0))][1];
                     $mb = $ruleKey->mb * $bobot;
                     $md = $ruleKey->md * $bobot;
-                    $cf = $mb - $md;
+                    $cf = ($mb - $md);
                     array_push($cfArr["cf"], $cf);
                     array_push($cfArr["kode_pasal"], $ruleKey->kode_pasal);
                 }
@@ -111,7 +111,18 @@ class PutusanController extends Controller
             'data_putusan' => json_encode($arrIdentifikasi),
             'kondisi' => json_encode($bobotPilihan)
         ]);
-        // dd($ins);
+
+        // CODE UNTUK AUTH NILAI <0
+        // $cf = $this->getGabunganCf($cfArr);
+        // if (is_array($cf) && isset($cf['value'])) {
+        //     $cfValue = $cf['value'];
+        
+        //     if ($cfValue < 0) {
+        //         return redirect()->back()->with('errorModal', 'Lengkapi identifikasi nya kembali, karena hasil yang anda inputkan belum bisa mengidentifikasi dasar hukum yang pelaku langgar.')->withInput();
+        //     }
+        // } else {
+        //     return redirect()->back()->withErrors(['error' => 'Nilai kepercayaan tidak valid.'])->withInput();
+        // }
         return redirect()->route('spk.result', ["putusan_id" => $putusan_id]);
     }
 
