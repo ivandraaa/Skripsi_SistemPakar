@@ -31,7 +31,7 @@ class PutusanController extends Controller
         $putusan = Putusan::all();
 
         return view('admin.putusan.admin_semua_putusan', [
-            "putusan" => $putusan,
+            'putusan' => $putusan,
         ]);
     }
 
@@ -44,7 +44,7 @@ class PutusanController extends Controller
     {
         $data = [
             'identifikasi' => Identifikasi::all(),
-            'kondisi_user' => KondisiUser::all()
+            'kondisi_user' => KondisiUser::all(),
         ];
 
         return view('clients.form_putusan', $data);
@@ -67,11 +67,11 @@ class PutusanController extends Controller
         $kodeIdentifikasi = [];
         $bobotPilihan = [];
         foreach ($kondisi as $key => $val) {
-            if ($val != "#") {
+            if ($val != '#') {
                 echo "key : $key, val : $val";
-                echo "<br>";
+                echo '<br>';
                 array_push($kodeIdentifikasi, $key);
-                array_push($bobotPilihan, array($key, $val));
+                array_push($bobotPilihan, [$key, $val]);
             }
         }
 
@@ -81,18 +81,20 @@ class PutusanController extends Controller
         $arrIdentifikasi = [];
         for ($i = 0; $i < count($pasal); $i++) {
             $cfArr = [
-                "cf" => [],
-                "kode_pasal" => []
+                'cf' => [],
+                'kode_pasal' => [],
             ];
-            $ruleSetiapPasal = Keputusan::whereIn("kode_identifikasi", $kodeIdentifikasi)->where("kode_pasal", $pasal[$i]->kode_pasal)->get();
+            $ruleSetiapPasal = Keputusan::whereIn('kode_identifikasi', $kodeIdentifikasi)
+                ->where('kode_pasal', $pasal[$i]->kode_pasal)
+                ->get();
             if (count($ruleSetiapPasal) > 0) {
                 foreach ($ruleSetiapPasal as $ruleKey) {
                     $bobot = $bobotPilihan[array_search($ruleKey->kode_identifikasi, array_column($bobotPilihan, 0))][1];
                     $mb = $ruleKey->mb * $bobot;
                     $md = $ruleKey->md * $bobot;
-                    $cf = ($mb - $md);
-                    array_push($cfArr["cf"], $cf);
-                    array_push($cfArr["kode_pasal"], $ruleKey->kode_pasal);
+                    $cf = $mb - $md;
+                    array_push($cfArr['cf'], $cf);
+                    array_push($cfArr['kode_pasal'], $ruleKey->kode_pasal);
                 }
                 $res = $this->getGabunganCf($cfArr);
                 array_push($arrIdentifikasi, $res);
@@ -100,136 +102,116 @@ class PutusanController extends Controller
                 continue;
             }
         }
-        // dd($arrIdentifikasi);
-        // echo "<br> arrIdentifikasi : ";
-        // print_r($arrIdentifikasi);
-        // echo "<br>";
 
         $putusan_id = uniqid();
-        $ins =  Putusan::create([
+        $ins = Putusan::create([
             'putusan_id' => strval($putusan_id),
             'data_putusan' => json_encode($arrIdentifikasi),
-            'kondisi' => json_encode($bobotPilihan)
+            'kondisi' => json_encode($bobotPilihan),
         ]);
-
-        // CODE UNTUK AUTH NILAI <0
-        // $cf = $this->getGabunganCf($cfArr);
-        // if (is_array($cf) && isset($cf['value'])) {
-        //     $cfValue = $cf['value'];
-        
-        //     if ($cfValue < 0) {
-        //         return redirect()->back()->with('errorModal', 'Lengkapi identifikasi nya kembali, karena hasil yang anda inputkan belum bisa mengidentifikasi dasar hukum yang pelaku langgar.')->withInput();
-        //     }
-        // } else {
-        //     return redirect()->back()->withErrors(['error' => 'Nilai kepercayaan tidak valid.'])->withInput();
-        // }
-        return redirect()->route('spk.result', ["putusan_id" => $putusan_id]);
+        return redirect()->route('spk.result', ['putusan_id' => $putusan_id]);
     }
 
     public function getGabunganCf($cfArr)
     {
-        // if ($cfArr["kode_pasal"][0] == "P004") {
-        //     # code...
-        //     dd($cfArr);
-        // }
-        // echo "<br> cfArr : ";
-        // print_r($cfArr);
-        // echo "<br>";
-        // dd($cfArr);
-        if (!$cfArr["cf"]) {
+        if (!$cfArr['cf']) {
             return 0;
         }
-        if (count($cfArr["cf"]) == 1) {
+        if (count($cfArr['cf']) == 1) {
             return [
-                "value" => strval($cfArr["cf"][0]),
-                "kode_pasal" => $cfArr["kode_pasal"][0]
+                'value' => strval($cfArr['cf'][0]),
+                'kode_pasal' => $cfArr['kode_pasal'][0],
             ];
         }
 
-        $cfoldGabungan = $cfArr["cf"][0];
-        // dd($cfoldGabungan);
-
-        // foreach ($cfArr["cf"] as $cf) {
-        //     $cfoldGabungan = $cfoldGabungan + ($cf * (1 - $cfoldGabungan));
-        // }
-
-        for ($i = 0; $i < count($cfArr["cf"]) - 1; $i++) {
-            $cfoldGabungan = $cfoldGabungan + ($cfArr["cf"][$i + 1] * (1 - $cfoldGabungan));
+        $cfoldGabungan = $cfArr['cf'][0];
+        for ($i = 0; $i < count($cfArr['cf']) - 1; $i++) {
+            $cfoldGabungan = $cfoldGabungan + $cfArr['cf'][$i + 1] * (1 - $cfoldGabungan);
         }
 
-
         return [
-            "value" => "$cfoldGabungan",
-            "kode_pasal" => $cfArr["kode_pasal"][0]
+            'value' => "$cfoldGabungan",
+            'kode_pasal' => $cfArr['kode_pasal'][0],
         ];
     }
 
     public function putusanResult($putusan_id)
     {
         $putusan = Putusan::where('putusan_id', $putusan_id)->first();
+
+        if (!$putusan) {
+            return redirect()
+                ->back()
+                ->with('errorModal', 'Putusan tidak ditemukan.')
+                ->withInput();
+        }
+
         $identifikasi = json_decode($putusan->kondisi, true);
         $data_putusan = json_decode($putusan->data_putusan, true);
-        // dd($data_putusan);
-        $int = 0.0;
-        $putusan_dipilih = [];
-        foreach ($data_putusan as $val) {
-            // print_r(floatval($val["value"]));
-            if (floatval($val["value"]) > $int) {
-                $putusan_dipilih["value"] = floatval($val["value"]);
-                $putusan_dipilih["kode_pasal"] = TingkatPasal::where("kode_pasal", $val["kode_pasal"])->first();
-                $int = floatval($val["value"]);
-            }
-        }
-        // dd($putusan_dipilih);
-        // dd($identifikasi);
 
-        $kodeIdentifikasi = [];
-        foreach ($identifikasi as $key) {
-            array_push($kodeIdentifikasi, $key[0]);
-        }
-        // dd($kodeIdentifikasi);
-        $kode_pasal = $putusan_dipilih["kode_pasal"]->kode_pasal;
-        $pakar = Keputusan::whereIn("kode_identifikasi", $kodeIdentifikasi)->where("kode_pasal", $kode_pasal)->get();
-        // dd($pakar);
-        $identifikasi_by_user = [];
-        foreach ($pakar as $key) {
-            $i = 0;
-            foreach ($identifikasi as $gKey) {
-                if ($gKey[0] == $key->kode_identifikasi) {
-                    array_push($identifikasi_by_user, $gKey);
+        $int = 0.0;
+        $putusan_dipilih = null;
+
+        foreach ($data_putusan as $val) {
+            if (isset($val['value']) && isset($val['kode_pasal'])) {
+                if (floatval($val['value']) > $int) {
+                    $int = floatval($val['value']);
+                    $putusan_dipilih = [
+                        'value' => $int,
+                        'kode_pasal' => TingkatPasal::where('kode_pasal', $val['kode_pasal'])->first(),
+                    ];
                 }
             }
         }
-        // dd($identifikasi_by_user);
+
+        if (!$putusan_dipilih || !isset($putusan_dipilih['kode_pasal'])) {
+            // Handle ketika kunci "kode_pasal" tidak ditemukan pada $putusan_dipilih
+            return redirect()
+                ->back()
+                ->with('errorModal', 'HASIL PUTUSAN TIDAK DITEMUKAN!! Identifikasi yang Anda Inputkan Belum Cukup Untuk Mengidentifikasikan Perkara')
+                ->with('saran', '*Pastikan Anda telah mengisi identifikasi dengan lengkap dan benar, sesuai dengan fakta perkara yang terjadi, dan perhatikan nilai kepercayaan yang anda yakini.');
+        }
+
+        $kodeIdentifikasi = array_column($identifikasi, 0);
+
+        $kode_pasal = $putusan_dipilih['kode_pasal']->kode_pasal;
+        $pakar = Keputusan::whereIn('kode_identifikasi', $kodeIdentifikasi)
+            ->where('kode_pasal', $kode_pasal)
+            ->get();
+
+        $identifikasi_by_user = [];
+
+        foreach ($pakar as $key) {
+            foreach ($identifikasi as $gKey) {
+                if ($gKey[0] == $key->kode_identifikasi) {
+                    $identifikasi_by_user[] = $gKey;
+                }
+            }
+        }
 
         $nilaiPakar = [];
+
         foreach ($pakar as $key) {
-            array_push($nilaiPakar, ($key->mb - $key->md));
+            $nilaiPakar[] = $key->mb - $key->md;
         }
-        $nilaiUser = [];
-        foreach ($identifikasi_by_user as $key) {
-            array_push($nilaiUser, $key[1]);
-        }
-        // dd($nilaiPakar);
-        // dd($nilaiUser);
+
+        $nilaiUser = array_column($identifikasi_by_user, 1);
 
         $cfKombinasi = $this->getCfCombinasi($nilaiPakar, $nilaiUser);
-        // dd($cfKombinasi);
         $hasil = $this->getGabunganCf($cfKombinasi);
-        // dd($hasil);
 
         $artikel = Artikel::where('kode_pasal', $kode_pasal)->first();
 
         return view('clients.cl_putusan_result', [
-            "putusan" => $putusan,
-            "putusan_dipilih" => $putusan_dipilih,
-            "identifikasi" => $identifikasi,
-            "data_putusan" => $data_putusan,
-            "pakar" => $pakar,
-            "identifikasi_by_user" => $identifikasi_by_user,
-            "cf_kombinasi" => $cfKombinasi,
-            "hasil" => $hasil,
-            "artikel" => $artikel
+            'putusan' => $putusan,
+            'putusan_dipilih' => $putusan_dipilih,
+            'identifikasi' => $identifikasi,
+            'data_putusan' => $data_putusan,
+            'pakar' => $pakar,
+            'identifikasi_by_user' => $identifikasi_by_user,
+            'cf_kombinasi' => $cfKombinasi,
+            'hasil' => $hasil,
+            'artikel' => $artikel,
         ]);
     }
 
@@ -242,14 +224,13 @@ class PutusanController extends Controller
                 array_push($cfComb, floatval($res));
             }
             return [
-                "cf" => $cfComb,
-                "kode_pasal" => ["0"]
+                'cf' => $cfComb,
+                'kode_pasal' => ['0'],
             ];
         } else {
-            return "Data tidak valid";
+            return 'Data tidak valid';
         }
     }
-
 
     /**
      * Display the specified resource.

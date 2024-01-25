@@ -67,8 +67,19 @@
     <link rel="canonical" href="index.html" />
 
     <style>
-        /* Global Styles Inline CSS */
-        /* ... (your global styles) ... */
+        .alert {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .alert-danger {
+            padding: 10px;
+        }
+
+        .alert-danger p {
+            margin: 0;
+            font-size: 14px;
+        }
     </style>
 
     <link rel='stylesheet' id='dashicons-css' href='pasal-assets/wp-includes/css/dashicons.min6a4d.css?ver=6.1.1'
@@ -158,6 +169,20 @@
             </div>
         </header>
         <main id="content" class="site-content">
+            @if (session('notification'))
+                <div class="alert alert-success">
+                    {{ session('notification') }}
+                </div>
+            @endif
+
+            @if (session('errorModal'))
+                <div class="alert alert-danger">
+                    {{ session('errorModal') }}
+                    @if (session('saran'))
+                        <p> {{ session('saran') }}</p>
+                    @endif
+                </div>
+            @endif
             <article id="post-22" class="post-22 screen type-screen status-publish hentry condition-depression">
                 <div class="wrap normal">
                     <div class="page-heading plain">
@@ -181,10 +206,17 @@
                                                 <li id="field_1_4"
                                                     class="gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_above gfield_visibility_visible"
                                                     data-js-reload="field_1_4">
-                                                    <p><strong>Tidak semua field harus diisi,</strong> jadi pastikan
-                                                        untuk memberikan
+                                                    <p>
+                                                        <b>Panduan Pengisian Identifikasi Perkara:</b><br>
+                                                        a. Tidak semua kolom formulir harus diisi, jadi pastikan untuk
+                                                        memberikan
                                                         jawaban yang tepat sesuai dengan kondisi kecelakaan lalu lintas
-                                                        pada Tempat Kejadian Perkara.
+                                                        <br>
+                                                        b. Isi kolom formulir dengan minimal 4 pilihan identifikasi
+                                                        perkara <br>
+                                                        c. Isi kolom formulir identifikasi berdasarkan tingkat keyakinan
+                                                        anda sebagai Hakim, dengan melihat kondisi
+                                                        kecelakaan lalu lintas
                                                     </p>
                                                 </li>
                                                 @foreach ($identifikasi as $item)
