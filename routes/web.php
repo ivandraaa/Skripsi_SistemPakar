@@ -5,6 +5,7 @@ use App\Http\Controllers\KeputusanController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\IdentifikasiController;
 use App\Http\Controllers\TingkatPasalController;
+use App\Http\Controllers\AdminController;
 use App\Models\Putusan;
 use App\Models\TingkatPasal;
 use App\Models\KondisiUser;
@@ -23,8 +24,6 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 
 Route::get('/', function () {
     return view('landing');
@@ -52,6 +51,10 @@ Route::middleware('auth')->group(function () {
         return view('admin.add_admin');
     });
 
+    Route::get('/dashboard/add_admin', [AdminController::class, 'showAddAdminForm'])->name('admin.add');
+    Route::post('/dashboard/add_admin', [AdminController::class, 'addAdmin'])->name('admin.add.submit');
+    Route::get('/dashboard/admin/delete/{id}', [AdminController::class, 'deleteAdmin'])->name('admin.delete');
+
     Route::get('/home', function () {
         return redirect('/dashboard');
     });
@@ -67,7 +70,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('/keputusan', KeputusanController::class);
         Route::resource('/artikel', ArtikelController::class);
     });
-    
+
     Route::resource('/spk', PutusanController::class)->only('index');
 });
 
@@ -85,7 +88,9 @@ Route::get('/form-faq', function () {
         'kondisi_user' => KondisiUser::all(),
     ];
     return view('faq', $data);
-})->name('cl.form')->middleware('auth');
+})
+    ->name('cl.form')
+    ->middleware('auth');
 
 Route::resource('/spk', PutusanController::class);
 Route::get('/spk/result/{putusan_id}', [PutusanController::class, 'putusanResult'])->name('spk.result');

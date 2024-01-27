@@ -96,7 +96,7 @@
         <h1 style="font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    text-decoration: underlined;">User Login</h1>
+    text-decoration: underlined;">Login</h1>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
