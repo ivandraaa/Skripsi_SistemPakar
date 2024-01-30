@@ -69,6 +69,9 @@ Route::middleware('auth')->group(function () {
         Route::resource('/pasal', TingkatPasalController::class);
         Route::resource('/keputusan', KeputusanController::class);
         Route::resource('/artikel', ArtikelController::class);
+        Route::get('/dashboard/add_admin', [AdminController::class, 'showAddAdminForm'])->name('admin.add');
+        Route::post('/dashboard/add_admin', [AdminController::class, 'addAdmin'])->name('admin.add.submit');
+        Route::get('/dashboard/admin/delete/{id}', [AdminController::class, 'deleteAdmin'])->name('admin.delete');
     });
 
     Route::resource('/spk', PutusanController::class)->only('index');
