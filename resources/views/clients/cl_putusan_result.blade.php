@@ -182,7 +182,7 @@
                                                     <td>{{ $val['kode_pasal'] }}</td>
                                                     <td>{{ App\Models\TingkatPasal::where('kode_pasal', $val['kode_pasal'])->first()->pasal }}
                                                     </td>
-                                                    <td>{{ $val['value'] * 100 }} %</td>
+                                                    <td>{{ number_format($val['value'] * 100, 2) }} %</td>
                                                 </tr>
                                                 <?php
                                     }

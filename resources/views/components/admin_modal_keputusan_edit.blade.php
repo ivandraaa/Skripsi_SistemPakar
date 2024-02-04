@@ -80,7 +80,7 @@
                                         onclick="toggleDropdown('mbDropdownContentEdit')">&#9660;</span>
                                 </label>
                                 <select class="form-control dropdown-content" id="mbDropdownContentEdit" name="mb"
-                                    onchange="updateMb()">
+                                    onchange="updateMd('mbDropdownContentEdit')">
                                     <option value="0">Tidak Tahu (0)</option>
                                     <option value="0.2">Tidak Yakin (0.2)</option>
                                     <option value="0.4">Mungkin (0.4)</option>
@@ -96,7 +96,7 @@
                                         onclick="toggleDropdown('mdDropdownContentEdit')">&#9660;</span>
                                 </label>
                                 <select class="form-control dropdown-content" id="mdDropdownContentEdit" name="md"
-                                    onchange="updateMd()">
+                                    onchange="updateMd('mdDropdownContentEdit')">
                                     <option value="0">Tidak Tahu (0)</option>
                                     <option value="0.2">Tidak Yakin (0.2)</option>
                                     <option value="0.4">Mungkin (0.4)</option>
@@ -201,7 +201,7 @@
                                         onclick="toggleDropdown('mbDropdownContent')">&#9660;</span>
                                 </label>
                                 <select class="form-control dropdown-content" id="mbDropdownContent" name="mb"
-                                    onchange="updateMd()">
+                                    onchange="updateMd('mbDropdownContent')">
                                     <option value="0">Tidak Tahu (0)</option>
                                     <option value="0.2">Tidak Yakin (0.2)</option>
                                     <option value="0.4">Mungkin (0.4)</option>
@@ -217,7 +217,7 @@
                                         onclick="toggleDropdown('mdDropdownContent')">&#9660;</span>
                                 </label>
                                 <select class="form-control dropdown-content" id="mdDropdownContent" name="md"
-                                    onchange="updateMb()">
+                                    onchange="updateMb('mdDropdownContent')">
                                     <option value="0">Tidak Tahu (0)</option>
                                     <option value="0.2">Tidak Yakin (0.2)</option>
                                     <option value="0.4">Mungkin (0.4)</option>
@@ -345,6 +345,51 @@
             $("#mbDropdownValueEdit").text(getDropdownLabel(mbValue, 'mbDropdownContentEdit'));
             $("#mdDropdownValueEdit").text(getDropdownLabel(mdValue, 'mdDropdownContentEdit'));
         });
+
+        function updateMd(dropdownId) {
+            var mbValue = parseFloat(document.getElementById(dropdownId).value);
+            var mdDropdown = document.getElementById(getOppositeDropdownId(dropdownId));
+
+            // Set nilai MD berdasarkan nilai MB
+            if (mbValue === 0) {
+                mdDropdown.value = 1;
+            } else if (mbValue === 0.2) {
+                mdDropdown.value = 0.4;
+            } else if (mbValue === 0.4) {
+                mdDropdown.value = 0.6;
+            } else if (mbValue === 0.6) {
+                mdDropdown.value = 0.4;
+            } else if (mbValue === 0.8) {
+                mdDropdown.value = 0.2;
+            } else if (mbValue === 1) {
+                mdDropdown.value = 0;
+            }
+        }
+
+        function updateMb(dropdownId) {
+            var mdValue = parseFloat(document.getElementById(dropdownId).value);
+            var mbDropdown = document.getElementById(getOppositeDropdownId(dropdownId));
+
+            // Set nilai MB berdasarkan nilai MD
+            if (mdValue === 0) {
+                mbDropdown.value = 1;
+            } else if (mdValue === 0.2) {
+                mbDropdown.value = 0.4;
+            } else if (mdValue === 0.4) {
+                mbDropdown.value = 0.6;
+            } else if (mdValue === 0.6) {
+                mbDropdown.value = 0.8;
+            } else if (mdValue === 0.8) {
+                mbDropdown.value = 0.2;
+            } else if (mdValue === 1) {
+                mbDropdown.value = 0;
+            }
+        }
+
+        // Fungsi untuk mendapatkan ID dropdown yang berlawanan
+        function getOppositeDropdownId(dropdownId) {
+            return dropdownId.includes('mb') ? dropdownId.replace('mb', 'md') : dropdownId.replace('md', 'mb');
+        }
     </script>
 </body>
 
