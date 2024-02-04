@@ -3,7 +3,7 @@
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 @extends('admin.admin_main')
-@section('title', 'Identifikasi')
+@section('title', 'Keputusan')
 
 {{-- isi --}}
 @section('admin_content')

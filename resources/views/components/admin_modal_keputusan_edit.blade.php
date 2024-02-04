@@ -74,18 +74,91 @@
                                 <label for="kode-pasal">Kode Pasal</label>
                             </div>
                             <div class="form-floating mb-3 p-2 mx-2">
-                                <input type="text" class="form-control" id="mb" placeholder="mb"
-                                    name="mb">
-                                <label for="mb">MB</label>
+                                <label for="mb" class="mb-label">
+                                    MB
+                                    <span id="mbDropdownIcon" class="dropdown-icon"
+                                        onclick="toggleDropdown('mbDropdownContentEdit')">&#9660;</span>
+                                </label>
+                                <select class="form-control dropdown-content" id="mbDropdownContentEdit" name="mb"
+                                    onchange="updateMb()">
+                                    <option value="0">Tidak Tahu (0)</option>
+                                    <option value="0.2">Tidak Yakin (0.2)</option>
+                                    <option value="0.4">Mungkin (0.4)</option>
+                                    <option value="0.6">Kemungkinan Besar (0.6)</option>
+                                    <option value="0.8">Hampir Pasti (0.8)</option>
+                                    <option value="1">Pasti (1)</option>
+                                </select>
                             </div>
                             <div class="form-floating mb-3 p-2 mx-2">
-                                <input type="text" class="form-control" id="md" placeholder="md"
-                                    name="md">
-                                <label for="md">MD</label>
+                                <label for="md" class="mb-label">
+                                    MD
+                                    <span id="mdDropdownIcon" class="dropdown-icon"
+                                        onclick="toggleDropdown('mdDropdownContentEdit')">&#9660;</span>
+                                </label>
+                                <select class="form-control dropdown-content" id="mdDropdownContentEdit" name="md"
+                                    onchange="updateMd()">
+                                    <option value="0">Tidak Tahu (0)</option>
+                                    <option value="0.2">Tidak Yakin (0.2)</option>
+                                    <option value="0.4">Mungkin (0.4)</option>
+                                    <option value="0.6">Kemungkinan Besar (0.6)</option>
+                                    <option value="0.8">Hampir Pasti (0.8)</option>
+                                    <option value="1">Pasti (1)</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <!-- Tabel Bobot -->
+                                <table class="table mr-4">
+                                    <thead>
+                                        <tr>
+                                            <th>Bobot</th>
+                                            <th>Nilai</th>
+                                            <th>Panduan Pengisian</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0</td>
+                                            <td>Tidak Tahu</td>
+                                            <td>Pakar tidak dapat menemukan hubungan atau relevansi yang jelas.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0.2</td>
+                                            <td>Tidak Yakin</td>
+                                            <td>Terdapat keraguan dalam menghubungkan identifikasi pertanyaan.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0.4</td>
+                                            <td>Mungkin</td>
+                                            <td>Pakar melihat kemungkinan adanya hubungan antara identifikasi
+                                                pertanyaan.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0.6</td>
+                                            <td>Kemungkinan Besar</td>
+                                            <td>Terdapat relevansi yang kuat antara identifikasi dan pasal tertentu,
+                                                tetapi adanya
+                                                ketidakpastian karena perbedaan penafsiran fakta dari berbagai sudut
+                                                pandang.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0.8</td>
+                                            <td>Hampir Pasti</td>
+                                            <td>Pakar memiliki keyakinan tinggi terkait hubungan identifikasi
+                                                pertanyaan.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Pasti</td>
+                                            <td>Terdapat keyakinan yang mutlak antara identifikasi pertanyaan dan pasal
+                                                hukum.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Ubah</button>
                     </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -96,6 +169,7 @@
     {{-- end modal edit identifikasi --}}
 
     {{-- modal tambah identifikasi --}}
+    <!-- Modal Tambah Keputusan -->
     <div class="modal fade modal-fullscreen-md-down" id="storeModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -105,7 +179,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    {{-- form tambah --}}
+                    {{-- Form Tambah --}}
                     <form id="tambah-identifikasi" action="{{ route('keputusan.store') }}" method="post">
                         @csrf
                         <div class="input-form d-flex">
@@ -116,7 +190,8 @@
                                 <label id='kode_app' for="kode-identifikasi">Kode Identifikasi</label>
                             </div>
                             <div class="form-floating mb-3 p-2 mx-2">
-                                <input type="text" class="form-control" id="kode-pasal" name="kode_pasal" required>
+                                <input type="text" class="form-control" id="kode-pasal" name="kode_pasal"
+                                    required>
                                 <label id='main_app' for="kode-pasal">Kode Pasal</label>
                             </div>
                             <div class="form-floating mb-3 p-2 mx-2">
@@ -152,7 +227,57 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <div class="d-flex mt-3">
+                            <!-- Tabel Bobot -->
+                            <table class="table mr-4">
+                                <thead>
+                                    <tr>
+                                        <th>Bobot</th>
+                                        <th>Nilai</th>
+                                        <th>Panduan Pengisian</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Tidak Tahu</td>
+                                        <td>Pakar tidak dapat menemukan hubungan atau relevansi yang jelas.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0.2</td>
+                                        <td>Tidak Yakin</td>
+                                        <td>Terdapat keraguan dalam menghubungkan identifikasi pertanyaan.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0.4</td>
+                                        <td>Mungkin</td>
+                                        <td>Pakar melihat kemungkinan adanya hubungan antara identifikasi pertanyaan.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>0.6</td>
+                                        <td>Kemungkinan Besar</td>
+                                        <td>Terdapat relevansi yang kuat antara identifikasi dan pasal tertentu, tetapi
+                                            adanya
+                                            ketidakpastian karena perbedaan penafsiran fakta dari berbagai sudut
+                                            pandang.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0.8</td>
+                                        <td>Hampir Pasti</td>
+                                        <td>Pakar memiliki keyakinan tinggi terkait hubungan identifikasi pertanyaan.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Pasti</td>
+                                        <td>Terdapat keyakinan yang mutlak antara identifikasi pertanyaan dan pasal
+                                            hukum.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -161,7 +286,8 @@
             </div>
         </div>
     </div>
-    {{-- end modal tambah identifikasi --}}
+    <!-- End Modal Tambah Keputusan -->
+
 
     <script>
         function toggleDropdown(id) {
@@ -178,20 +304,47 @@
             });
         });
 
-        function updateInput(idIdentifikasi, kode, kode_pasal, mb, md) {
-            document.getElementById("kode-identifikasi").value = kode;
-            document.getElementById("kode-pasal").value = kode_pasal;
-            document.getElementById("mb").value = mb;
-            document.getElementById("md").value = md;
-            document.getElementById("id_identifikasi").value = idIdentifikasi;
-        }
-
         function actionUbahIdentifikasi(params) {
             const formIdentifikasi = document.getElementById('edit-identifikasi');
             formIdentifikasi.setAttribute('action', params);
             formIdentifikasi.setAttribute('method', 'POST');
             console.log(formIdentifikasi);
         }
+
+        function setDropdownValues(mbValue, mdValue) {
+            // Set nilai dropdown MB
+            $("#mbDropdownContentEdit").val(mbValue);
+            // Set nilai dropdown MD
+            $("#mdDropdownContentEdit").val(mdValue);
+        }
+
+        // Fungsi untuk menangani perubahan data dan memanggil fungsi setDropdownValues
+        function updateInput(idIdentifikasi, kode, kode_pasal, mb, md) {
+            document.getElementById("kode-identifikasi").value = kode;
+            document.getElementById("kode-pasal").value = kode_pasal;
+            document.getElementById("id_identifikasi").value = idIdentifikasi;
+
+            // Panggil fungsi setDropdownValues untuk mengatur nilai default dropdown
+            setDropdownValues(mb, md);
+
+            // Tetapkan nilai dropdown pada elemen tampilan
+            $("#mbDropdownValueEdit").text(getDropdownLabel(mb, 'mbDropdownContentEdit'));
+            $("#mdDropdownValueEdit").text(getDropdownLabel(md, 'mdDropdownContentEdit'));
+        }
+
+
+        function getDropdownLabel(value, dropdownId) {
+            return $("#" + dropdownId + " option[value='" + value + "']").text();
+        }
+
+        $('#exampleModal').on('shown.bs.modal', function() {
+            var mbValue = $("#mbDropdownContentEdit").val();
+            var mdValue = $("#mdDropdownContentEdit").val();
+
+            // Tetapkan nilai dropdown pada elemen tampilan
+            $("#mbDropdownValueEdit").text(getDropdownLabel(mbValue, 'mbDropdownContentEdit'));
+            $("#mdDropdownValueEdit").text(getDropdownLabel(mdValue, 'mdDropdownContentEdit'));
+        });
     </script>
 </body>
 
