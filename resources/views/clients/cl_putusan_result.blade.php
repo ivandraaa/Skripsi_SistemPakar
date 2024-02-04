@@ -175,18 +175,18 @@
                                     ?>
                                     @foreach ($sortedDataPutusan as $val)
                                         <?php
-                            // Cek apakah tingkat kepercayaan lebih besar dari -20%
-                            if ($val['value'] * 100 > -20) {
-                            ?>
-                                        <tr>
-                                            <td>{{ $val['kode_pasal'] }}</td>
-                                            <td>{{ App\Models\TingkatPasal::where('kode_pasal', $val['kode_pasal'])->first()->pasal }}
-                                            </td>
-                                            <td>{{ $val['value'] * 100 }} %</td>
-                                        </tr>
-                                        <?php
-                            }
-                            ?>
+                                    // Cek apakah tingkat kepercayaan lebih besar dari -20%
+                                    if ($val['value'] * 100 > -20) {
+                                    ?>
+                                                <tr>
+                                                    <td>{{ $val['kode_pasal'] }}</td>
+                                                    <td>{{ App\Models\TingkatPasal::where('kode_pasal', $val['kode_pasal'])->first()->pasal }}
+                                                    </td>
+                                                    <td>{{ $val['value'] * 100 }} %</td>
+                                                </tr>
+                                                <?php
+                                    }
+                                    ?>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -213,8 +213,13 @@
             </div>
             @include('components.cl_article')
             <div>
-                <a style="align-content: flex-end" href="/form" class="btn btn-primary mb-3"> KEMBALI</a>
+                <a style="align-content: flex-end" href="javascript:void(0);" onclick="goBackAndReload()" class="btn btn-primary mb-3">KEMBALI</a>
             </div>
         </div>
     </div>
 @endsection
+<script>
+    function goBackAndReload() {
+        window.location.replace(document.referrer);
+    }
+</script>
