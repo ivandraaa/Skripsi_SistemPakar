@@ -204,6 +204,14 @@ class Identifikasi extends Model
                 "kode_identifikasi" => "G047",
                 "identifikasi" => "kendaraan yang dikendarai oleh anda masuk ke jalur lawan arah sebelum terjadi kecelakaan?"
             ],
+            [
+                "kode_identifikasi" => "G048",
+                "identifikasi" => "akibat dari kelalaian anda dalam mengemudikan kendaraan menyebabkan korban meninggal dunia?"
+            ],
+            [
+                "kode_identifikasi" => "G049",
+                "identifikasi" => "korban meninggal dunia sebagai akibat dari tindakan anda yang disengaja menimbulkan kecelakaan?"
+            ],
         ];
 
         return $identifikasi2;

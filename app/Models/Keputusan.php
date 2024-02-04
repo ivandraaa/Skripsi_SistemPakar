@@ -549,96 +549,120 @@ class Keputusan extends Model
                 'mb' => 0.6,
                 'md' => 0.4
             ],
-            // Pasal 311 Ayat 1
+            // Pasal 310 Ayat 4
             [
                 'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G003',
-                'mb' => 0.8,
-                'md' => 0.2
+                'kode_identifikasi' => 'G001',
+                'mb' => 0.4,
+                'md' => 0.6
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G004',
+                'kode_identifikasi' => 'G002',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G003',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G005',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G009',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G013',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G006',
+                'kode_identifikasi' => 'G017',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G018',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G019',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G020',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
                 'kode_pasal' => 'P004',
                 'kode_identifikasi' => 'G021',
-                'mb' => 0,
-                'md' => 1
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G028',
-                'mb' => 0.8,
-                'md' => 0.2
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G029',
-                'mb' => 0.8,
-                'md' => 0.2
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G030',
-                'mb' => 0.6,
-                'md' => 0.4
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G031',
-                'mb' => 0.6,
-                'md' => 0.4
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G032',
-                'mb' => 1,
-                'md' => 0
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G033',
-                'mb' => 0.2,
-                'md' => 0.8
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G034',
-                'mb' => 0.2,
-                'md' => 0.8
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G035',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
                 'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G036',
+                'kode_identifikasi' => 'G022',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G023',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G024',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G025',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G026',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G033',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G037',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
                 'kode_pasal' => 'P004',
                 'kode_identifikasi' => 'G038',
-                'mb' => 0.4,
-                'md' => 0.6
-            ],
-            [
-                'kode_pasal' => 'P004',
-                'kode_identifikasi' => 'G039',
-                'mb' => 0.4,
-                'md' => 0.6
+                'mb' => 0.8,
+                'md' => 0.2
             ],
             [
                 'kode_pasal' => 'P004',
@@ -648,486 +672,716 @@ class Keputusan extends Model
             ],
             [
                 'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G046',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G047',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P004',
+                'kode_identifikasi' => 'G048',
+                'mb' => 1,
+                'md' => 0
+            ],
+            // Pasal 311 Ayat 1
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G003',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G004',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G006',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P006',
+                'kode_identifikasi' => 'G021',
+                'mb' => 0,
+                'md' => 1
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G028',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G029',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G030',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G031',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G032',
+                'mb' => 1,
+                'md' => 0
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G033',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G034',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G035',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G036',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G038',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G039',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P005',
+                'kode_identifikasi' => 'G040',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P005',
                 'kode_identifikasi' => 'G042',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P004',
+                'kode_pasal' => 'P005',
                 'kode_identifikasi' => 'G044',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P004',
+                'kode_pasal' => 'P005',
                 'kode_identifikasi' => 'G045',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P004',
+                'kode_pasal' => 'P005',
                 'kode_identifikasi' => 'G047',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             // Pasal 311 Ayat 2
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G003',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G004',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G006',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G015',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G021',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G028',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G029',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G030',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G031',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G032',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G033',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G034',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G035',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G036',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G038',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G039',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G040',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G041',
                 'mb' => 1,
                 'md' => 0
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G042',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G044',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G045',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P005',
+                'kode_pasal' => 'P006',
                 'kode_identifikasi' => 'G047',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             // Pasal 311 Ayat 3
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G003',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G004',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G006',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G015',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G016',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G017',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G018',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G019',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G020',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G021',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G028',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G029',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G030',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G031',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G032',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G033',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G034',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G035',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G036',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G038',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G039',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G040',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G041',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G042',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G043',
                 'mb' => 1,
                 'md' => 0
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G044',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G045',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P006',
+                'kode_pasal' => 'P007',
                 'kode_identifikasi' => 'G047',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
-            // Pasal 311 Ayat 3
+            // Pasal 311 Ayat 4
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G003',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G004',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G006',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G017',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G018',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G019',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G020',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G021',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G027',
                 'mb' => 0.8,
                 'md' => 0.2
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G028',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G029',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G030',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G031',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G032',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G033',
                 'mb' => 0.2,
                 'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G034',
                 'mb' => 0.6,
                 'md' => 0.4
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G035',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G036',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G038',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G039',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G040',
                 'mb' => 0.2,
-                'md' => 0.4
+                'md' => 0.8
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G042',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G044',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G045',
                 'mb' => 0.4,
                 'md' => 0.6
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G046',
                 'mb' => 1,
                 'md' => 0
             ],
             [
-                'kode_pasal' => 'P007',
+                'kode_pasal' => 'P008',
                 'kode_identifikasi' => 'G047',
                 'mb' => 0.6,
                 'md' => 0.4
+            ],
+            // Pasal 311 Ayat 5
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G003',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G004',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G006',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G020',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G021',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G028',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G029',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G031',
+                'mb' => 0.8,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G032',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G033',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G034',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G038',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G040',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G042',
+                'mb' => 0.2,
+                'md' => 0.8
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G044',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G045',
+                'mb' => 0.4,
+                'md' => 0.6
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G046',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G047',
+                'mb' => 0.6,
+                'md' => 0.4
+            ],
+            [
+                'kode_pasal' => 'P009',
+                'kode_identifikasi' => 'G049',
+                'mb' => 1,
+                'md' => 0
             ],
         ];
         return $rule;

@@ -29,19 +29,27 @@ class TingkatPasal extends Model
             ],
             [
                 "kode_pasal" => "P004",
-                "pasal" => "Pasal 311 Ayat 1"
+                "pasal" => "Pasal 310 Ayat 4"
             ],
             [
                 "kode_pasal" => "P005",
-                "pasal" => "Pasal 311 Ayat 2"
+                "pasal" => "Pasal 311 Ayat 1"
             ],
             [
                 "kode_pasal" => "P006",
-                "pasal" => "Pasal 311 Ayat 3"
+                "pasal" => "Pasal 311 Ayat 2"
             ],
             [
                 "kode_pasal" => "P007",
+                "pasal" => "Pasal 311 Ayat 3"
+            ],
+            [
+                "kode_pasal" => "P008",
                 "pasal" => "Pasal 311 Ayat 4"
+            ],
+            [
+                "kode_pasal" => "P009",
+                "pasal" => "Pasal 311 Ayat 5"
             ],
         ];
         return $pasal;
